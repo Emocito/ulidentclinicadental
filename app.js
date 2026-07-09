@@ -220,8 +220,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   upgradeMobileNavigation();
 
-  // --- 1.1 MOBILE STICKY CTA BOTTOM BAR ---
+  // --- 1.1 MOBILE STICKY CTA BOTTOM BAR (mobile only, < 1024px) ---
+  const removeMobileStickyCta = () => {
+    const existing = document.getElementById('mobile-sticky-cta');
+    if (existing) {
+      existing.remove();
+      document.body.style.paddingBottom = '';
+    }
+  };
+
   const injectMobileStickyCta = () => {
+    // Only show on mobile viewports (< 1024px)
+    if (window.innerWidth >= 1024) { removeMobileStickyCta(); return; }
     if (document.getElementById('mobile-sticky-cta')) return;
 
     const stickyCta = document.createElement('div');
@@ -264,7 +274,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  // Run on load and on every resize so desktop never shows the bar
   injectMobileStickyCta();
+  window.addEventListener('resize', injectMobileStickyCta);
 
   // --- 2. SCROLL REVEAL ANIMATIONS ---
   const revealElements = document.querySelectorAll('.reveal-item');
