@@ -549,5 +549,23 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   initCookiesSystem();
+
+  // --- 6. FLOATING WHATSAPP BUTTON ---
+  const injectWhatsAppButton = () => {
+    const waButton = document.createElement('a');
+    waButton.href = 'https://wa.me/34679926552';
+    waButton.target = '_blank';
+    waButton.rel = 'noopener noreferrer';
+    waButton.className = 'fixed bottom-6 right-6 z-40 flex items-center justify-center w-14 h-14 bg-[#25D366] hover:bg-[#20BA56] text-white rounded-full shadow-2xl transition-all duration-300 hover:scale-110 focus:outline-none hover:shadow-[0_0_20px_rgba(37,211,102,0.6)]';
+    waButton.setAttribute('aria-label', 'Contactar por WhatsApp');
+    waButton.innerHTML = `
+      <svg viewBox="0 0 24 24" class="w-7 h-7 fill-current">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436.002 9.858-4.419 9.86-9.857.002-2.635-1.02-5.11-2.883-6.975C16.577 1.907 14.1 .883 11.468.883 6.03.883 1.61 5.303 1.608 10.742c-.001 1.666.438 3.293 1.272 4.739l-.951 3.472 3.557-.933c1.558.85 3.125 1.271 4.544 1.271h.001L6.647 19.15zm10.963-7.533c-.324-.162-1.92-.949-2.217-1.058-.297-.108-.513-.162-.73.162-.216.324-.838 1.058-1.027 1.274-.189.216-.378.243-.702.08-2.673-1.335-4.308-3.013-5.15-4.471-.223-.387-.024-.597.17-.79.175-.173.378-.432.568-.649.189-.216.253-.378.378-.629.124-.25.064-.47-.03-.649-.093-.18-.73-1.758-.999-2.407-.262-.63-.53-.54-.73-.55l-.624-.011c-.216 0-.568.08-.865.405-.297.324-1.135 1.108-1.135 2.702 0 1.594 1.162 3.136 1.324 3.352.162.216 2.284 3.488 5.534 4.894.773.334 1.377.534 1.847.684.777.247 1.485.212 2.043.129.622-.093 1.92-.785 2.19-1.542.27-.757.27-1.406.189-1.542-.089-.136-.306-.216-.63-.378z"/>
+      </svg>
+    `;
+    document.body.appendChild(waButton);
+  };
+  
+  injectWhatsAppButton();
 });
 
