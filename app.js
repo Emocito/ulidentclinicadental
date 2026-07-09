@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const stickyCta = document.createElement('div');
     stickyCta.id = 'mobile-sticky-cta';
-    stickyCta.className = 'fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-white/95 backdrop-blur-md border-t border-slate-200/80 shadow-[0_-8px_30px_rgba(0,0,0,0.08)] flex justify-between items-center px-4 py-2.5 pb-safe';
+    stickyCta.className = 'fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-white/95 backdrop-blur-md border-t border-slate-200/80 shadow-[0_-8px_30px_rgba(0,0,0,0.08)] flex justify-between items-center px-2 py-2 pb-safe';
     
     stickyCta.innerHTML = `
       <!-- Llamar -->
@@ -244,9 +244,9 @@ document.addEventListener('DOMContentLoaded', () => {
       </a>
 
       <!-- Pedir Cita -->
-      <a href="index.html#reserva" class="flex-grow flex items-center justify-center bg-brand-blue hover:bg-brand-bluedark text-white rounded-xl py-2.5 px-4 mx-2 transition-colors shadow-md hover:shadow-lg">
-        <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
-        <span class="text-xs font-extrabold uppercase tracking-wide">Pedir Cita</span>
+      <a href="index.html#reserva" class="flex-1 flex flex-col items-center justify-center bg-brand-blue hover:bg-brand-bluedark text-white rounded-xl py-1 mx-1.5 transition-colors shadow-sm">
+        <i data-lucide="calendar" class="w-5 h-5 mb-1 text-white"></i>
+        <span class="text-[10px] font-bold uppercase tracking-wider">Pedir Cita</span>
       </a>
     `;
 
