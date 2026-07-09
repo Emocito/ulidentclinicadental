@@ -5,53 +5,261 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   
-  // --- 1. NAVBAR SCROLL EFFECT & MOBILE MENU ---
+  // --- 1. NAVBAR SCROLL EFFECT & MOBILE MENU UPGRADE (NAVIGATION DRAWER) ---
   const header = document.querySelector('header');
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const mobileMenuLinks = mobileMenu.querySelectorAll('a');
   
   // Sticky header background shift
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      header.classList.add('shadow-md');
-      header.classList.remove('py-5');
-      header.classList.add('py-3');
-    } else {
-      header.classList.remove('shadow-md');
-      header.classList.remove('py-3');
-      header.classList.add('py-5');
+    if (header) {
+      if (window.scrollY > 50) {
+        header.classList.add('shadow-md');
+        header.classList.remove('py-5');
+        header.classList.add('py-3');
+      } else {
+        header.classList.remove('shadow-md');
+        header.classList.remove('py-3');
+        header.classList.add('py-5');
+      }
     }
   });
 
-  // Mobile menu toggle
-  if (mobileMenuBtn && mobileMenu) {
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      // Change icon between menu and close
-      const icon = mobileMenuBtn.querySelector('i');
-      if (icon) {
-        if (mobileMenu.classList.contains('hidden')) {
-          icon.setAttribute('data-lucide', 'menu');
-        } else {
-          icon.setAttribute('data-lucide', 'x');
+  const upgradeMobileNavigation = () => {
+    const oldMobileMenu = document.getElementById('mobile-menu');
+    if (oldMobileMenu) {
+      oldMobileMenu.remove(); // Remove old static dropdown
+    }
+
+    if (!mobileMenuBtn) return;
+
+    // Create backdrop element
+    const backdrop = document.createElement('div');
+    backdrop.id = 'mobile-menu-backdrop';
+    backdrop.className = 'fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300 pointer-events-none';
+    document.body.appendChild(backdrop);
+
+    // Create drawer element
+    const drawer = document.createElement('div');
+    drawer.id = 'mobile-menu-drawer';
+    drawer.className = 'fixed inset-y-0 right-0 w-4/5 max-w-sm h-full bg-[#0B3A70] shadow-2xl z-50 p-6 flex flex-col justify-between overflow-y-auto transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden';
+    
+    drawer.innerHTML = `
+      <!-- Drawer Header -->
+      <div class="flex items-center justify-between pb-6 border-b border-white/10 flex-shrink-0">
+        <a href="index.html" class="flex items-center space-x-3 group">
+          <svg viewBox="0 0 100 100" class="w-8 h-8 text-white fill-none stroke-white" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M50,80 C22,58 10,40 10,26 C10,14 19,8 29,8 C37,8 44,13 50,18 C56,13 63,8 71,8 C81,8 90,14 90,26 C90,40 78,58 50,80 Z" />
+            <path d="M50,18 L73,41 L50,64 L27,41 Z" />
+          </svg>
+          <div class="flex flex-col">
+            <span class="font-heading font-extrabold text-lg tracking-wide text-white leading-none">ULIDENT</span>
+            <span class="text-[6.5px] uppercase tracking-[0.2em] text-white/80 font-semibold mt-1">PERFECT & NATURAL SMILE</span>
+          </div>
+        </a>
+        <button id="mobile-menu-close-btn" class="p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-xl transition-all" aria-label="Cerrar menú">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <!-- Drawer Content -->
+      <nav class="flex-grow py-6 flex flex-col space-y-6 overflow-y-auto pr-1">
+        <div class="space-y-3">
+          <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold border-l-2 border-brand-gold pl-2">Nuestros Tratamientos</p>
+          <div class="grid grid-cols-1 gap-1.5 pl-2">
+            <a href="odontologia-general.html" class="flex items-center space-x-3 text-sm font-semibold text-slate-200 hover:text-brand-gold py-1.5 transition-colors drawer-link">
+              <i data-lucide="stethoscope" class="w-4 h-4 text-white/60 flex-shrink-0"></i>
+              <span>Odontología General</span>
+            </a>
+            <a href="implantologia.html" class="flex items-center space-x-3 text-sm font-semibold text-slate-200 hover:text-brand-gold py-1.5 transition-colors drawer-link">
+              <i data-lucide="crown" class="w-4 h-4 text-white/60 flex-shrink-0"></i>
+              <span>Implantología</span>
+            </a>
+            <a href="ortodoncia.html" class="flex items-center space-x-3 text-sm font-semibold text-slate-200 hover:text-brand-gold py-1.5 transition-colors drawer-link">
+              <i data-lucide="grid" class="w-4 h-4 text-white/60 flex-shrink-0"></i>
+              <span>Ortodoncia</span>
+            </a>
+            <a href="odontopediatria.html" class="flex items-center space-x-3 text-sm font-semibold text-slate-200 hover:text-brand-gold py-1.5 transition-colors drawer-link">
+              <i data-lucide="baby" class="w-4 h-4 text-white/60 flex-shrink-0"></i>
+              <span>Odontopediatría</span>
+            </a>
+            <a href="estetica-dental.html#blanqueamiento" class="flex items-center space-x-3 text-sm font-semibold text-slate-200 hover:text-brand-gold py-1.5 transition-colors drawer-link">
+              <i data-lucide="sun" class="w-4 h-4 text-white/60 flex-shrink-0"></i>
+              <span>Blanqueamiento Dental</span>
+            </a>
+            <a href="estetica-dental.html#carillas" class="flex items-center space-x-3 text-sm font-semibold text-slate-200 hover:text-brand-gold py-1.5 transition-colors drawer-link">
+              <i data-lucide="layers" class="w-4 h-4 text-white/60 flex-shrink-0"></i>
+              <span>Carillas</span>
+            </a>
+            <a href="estetica-dental.html#dsd" class="flex items-center space-x-3 text-sm font-semibold text-slate-200 hover:text-brand-gold py-1.5 transition-colors drawer-link">
+              <i data-lucide="monitor" class="w-4 h-4 text-white/60 flex-shrink-0"></i>
+              <span>Digital Smile Design</span>
+            </a>
+            <a href="estetica-dental.html#joya-dental" class="flex items-center space-x-3 text-sm font-semibold text-slate-200 hover:text-brand-gold py-1.5 transition-colors drawer-link">
+              <i data-lucide="gem" class="w-4 h-4 text-white/60 flex-shrink-0"></i>
+              <span>Joya Dental</span>
+            </a>
+          </div>
+        </div>
+
+        <hr class="border-white/10">
+
+        <div class="space-y-3 flex flex-col pl-2">
+          <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold border-l-2 border-brand-gold pl-2 mb-1">Clínica</p>
+          <a href="nosotros.html" class="flex items-center space-x-3 text-sm font-semibold text-white/90 hover:text-brand-gold py-1.5 transition-colors drawer-link">
+            <i data-lucide="users" class="w-4 h-4 text-white/60 flex-shrink-0"></i>
+            <span>Sobre Nosotros</span>
+          </a>
+          <a href="index.html#financiacion" class="flex items-center space-x-3 text-sm font-semibold text-white/90 hover:text-brand-gold py-1.5 transition-colors drawer-link">
+            <i data-lucide="credit-card" class="w-4 h-4 text-white/60 flex-shrink-0"></i>
+            <span>Financiación</span>
+          </a>
+          <a href="contacto.html" class="flex items-center space-x-3 text-sm font-semibold text-white/90 hover:text-brand-gold py-1.5 transition-colors drawer-link">
+            <i data-lucide="mail" class="w-4 h-4 text-white/60 flex-shrink-0"></i>
+            <span>Contacto</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Drawer Footer -->
+      <div class="pt-6 border-t border-white/10 space-y-4 flex-shrink-0">
+        <a href="tel:+34910248447" class="w-full py-3 rounded-xl text-sm font-bold text-[#0B3A70] bg-white hover:bg-slate-100 transition-colors flex items-center justify-center space-x-2 shadow-lg">
+          <i data-lucide="phone" class="w-4 h-4 fill-current"></i>
+          <span>Llamar: 910 248 447</span>
+        </a>
+        <div class="text-center text-[10px] text-slate-300 space-y-1">
+          <p class="font-medium text-slate-200">Av. del Marqués de Corbera, 14, Madrid</p>
+          <p class="text-slate-400">L-V: 10:00-14:00 | 16:00-20:00</p>
+        </div>
+      </div>
+    `;
+    
+    document.body.appendChild(drawer);
+
+    // Dynamic Active Link Highlight
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const currentHash = window.location.hash;
+    const drawerLinks = drawer.querySelectorAll('.drawer-link');
+    
+    drawerLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (!href) return;
+      const [linkPath, linkHash] = href.split('#');
+      
+      const pathMatches = (linkPath === currentPath) || (linkPath === '' && currentPath === 'index.html') || (linkPath === 'index.html' && currentPath === '');
+      const hashMatches = !linkHash ? !currentHash : currentHash === `#${linkHash}`;
+      
+      if (pathMatches && hashMatches) {
+        link.classList.add('text-brand-gold', 'font-bold');
+        link.classList.remove('text-slate-200', 'text-white/90');
+        const icon = link.querySelector('i');
+        if (icon) {
+          icon.classList.add('text-brand-gold');
+          icon.classList.remove('text-white/60');
         }
-        lucide.createIcons();
       }
     });
 
-    // Close menu when clicking links
-    mobileMenuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-        const icon = mobileMenuBtn.querySelector('i');
-        if (icon) {
-          icon.setAttribute('data-lucide', 'menu');
-          lucide.createIcons();
+    // Setup transitions
+    const openDrawer = () => {
+      backdrop.classList.remove('hidden');
+      // Trigger reflow
+      backdrop.offsetHeight;
+      backdrop.classList.add('active');
+      drawer.classList.add('active');
+      document.body.classList.add('overflow-hidden');
+      
+      const menuIcon = mobileMenuBtn.querySelector('i');
+      if (menuIcon) {
+        menuIcon.setAttribute('data-lucide', 'x');
+        lucide.createIcons();
+      }
+    };
+
+    const closeDrawer = () => {
+      backdrop.classList.remove('active');
+      drawer.classList.remove('active');
+      document.body.classList.remove('overflow-hidden');
+      
+      const menuIcon = mobileMenuBtn.querySelector('i');
+      if (menuIcon) {
+        menuIcon.setAttribute('data-lucide', 'menu');
+        lucide.createIcons();
+      }
+
+      setTimeout(() => {
+        if (!drawer.classList.contains('active')) {
+          backdrop.classList.add('hidden');
         }
-      });
+      }, 350);
+    };
+
+    mobileMenuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (drawer.classList.contains('active')) {
+        closeDrawer();
+      } else {
+        openDrawer();
+      }
     });
-  }
+
+    backdrop.addEventListener('click', closeDrawer);
+    
+    const closeBtn = drawer.querySelector('#mobile-menu-close-btn');
+    if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+
+    // Also close drawer if links inside are clicked (useful for anchors on same page)
+    drawer.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeDrawer);
+    });
+
+    // Reinitialize Lucide Icons for the newly added HTML content
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+  };
+
+  upgradeMobileNavigation();
+
+  // --- 1.1 MOBILE STICKY CTA BOTTOM BAR ---
+  const injectMobileStickyCta = () => {
+    if (document.getElementById('mobile-sticky-cta')) return;
+
+    const stickyCta = document.createElement('div');
+    stickyCta.id = 'mobile-sticky-cta';
+    stickyCta.className = 'fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-white/95 backdrop-blur-md border-t border-slate-200/80 shadow-[0_-8px_30px_rgba(0,0,0,0.08)] flex justify-between items-center px-4 py-2.5 pb-safe';
+    
+    stickyCta.innerHTML = `
+      <!-- Llamar -->
+      <a href="tel:+34910248447" class="flex-1 flex flex-col items-center justify-center text-slate-600 hover:text-brand-blue py-1 transition-colors">
+        <i data-lucide="phone" class="w-5 h-5 mb-1 text-slate-500"></i>
+        <span class="text-[10px] font-bold uppercase tracking-wider">Llamar</span>
+      </a>
+
+      <!-- WhatsApp -->
+      <a href="https://wa.me/34679926552" target="_blank" rel="noopener noreferrer" class="flex-1 flex flex-col items-center justify-center text-slate-600 hover:text-[#25D366] py-1 transition-colors border-x border-slate-100">
+        <svg viewBox="0 0 24 24" class="w-5 h-5 mb-1 text-[#25D366] fill-current">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436.002 9.858-4.419 9.86-9.857.002-2.635-1.02-5.11-2.883-6.975C16.577 1.907 14.1 .883 11.468.883 6.03.883 1.61 5.303 1.608 10.742c-.001 1.666.438 3.293 1.272 4.739l-.951 3.472 3.557-.933c1.558.85 3.125 1.271 4.544 1.271h.001L6.647 19.15zm10.963-7.533c-.324-.162-1.92-.949-2.217-1.058-.297-.108-.513-.162-.73.162-.216.324-.838 1.058-1.027 1.274-.189.216-.378.243-.702.08-2.673-1.335-4.308-3.013-5.15-4.471-.223-.387-.024-.597.17-.79.175-.173.378-.432.568-.649.189-.216.253-.378.378-.629.124-.25.064-.47-.03-.649-.093-.18-.73-1.758-.999-2.407-.262-.63-.53-.54-.73-.55l-.624-.011c-.216 0-.568.08-.865.405-.297.324-1.135 1.108-1.135 2.702 0 1.594 1.162 3.136 1.324 3.352.162.216 2.284 3.488 5.534 4.894.773.334 1.377.534 1.847.684.777.247 1.485.212 2.043.129.622-.093 1.92-.785 2.19-1.542.27-.757.27-1.406.189-1.542-.089-.136-.306-.216-.63-.378z"/>
+        </svg>
+        <span class="text-[10px] font-bold uppercase tracking-wider">WhatsApp</span>
+      </a>
+
+      <!-- Pedir Cita -->
+      <a href="index.html#reserva" class="flex-grow flex items-center justify-center bg-brand-blue hover:bg-brand-bluedark text-white rounded-xl py-2.5 px-4 mx-2 transition-colors shadow-md hover:shadow-lg">
+        <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+        <span class="text-xs font-extrabold uppercase tracking-wide">Pedir Cita</span>
+      </a>
+    `;
+
+    document.body.appendChild(stickyCta);
+    document.body.classList.add('pb-20', 'lg:pb-0');
+
+    // Reinitialize Lucide for phone/calendar icons
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+  };
+
+  injectMobileStickyCta();
 
   // --- 2. SCROLL REVEAL ANIMATIONS ---
   const revealElements = document.querySelectorAll('.reveal-item');
@@ -556,7 +764,7 @@ document.addEventListener('DOMContentLoaded', () => {
     waButton.href = 'https://wa.me/34679926552';
     waButton.target = '_blank';
     waButton.rel = 'noopener noreferrer';
-    waButton.className = 'fixed bottom-6 right-6 z-40 flex items-center justify-center w-14 h-14 bg-[#25D366] hover:bg-[#20BA56] text-white rounded-full shadow-2xl transition-all duration-300 hover:scale-110 focus:outline-none hover:shadow-[0_0_20px_rgba(37,211,102,0.6)]';
+    waButton.className = 'fixed bottom-6 right-6 z-40 hidden lg:flex items-center justify-center w-14 h-14 bg-[#25D366] hover:bg-[#20BA56] text-white rounded-full shadow-2xl transition-all duration-300 hover:scale-110 focus:outline-none hover:shadow-[0_0_20px_rgba(37,211,102,0.6)]';
     waButton.setAttribute('aria-label', 'Contactar por WhatsApp');
     waButton.innerHTML = `
       <svg viewBox="0 0 24 24" class="w-7 h-7 fill-current">

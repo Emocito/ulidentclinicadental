@@ -85,22 +85,26 @@ h1, h2, h3, h4, h5, h6 {
   z-index: -1;
 }
 
-.btn-gold-shine:hover::before {
-  left: 100%;
-}
+@media (hover: hover) {
+  .btn-gold-shine:hover::before {
+    left: 100%;
+  }
 
-.btn-gold-shine:hover {
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-  transform: translateY(-2px);
+  .btn-gold-shine:hover {
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+    transform: translateY(-2px);
+  }
 }
 
 /* Blue Glow Button */
 .btn-blue-glow {
   transition: all 0.3s ease;
 }
-.btn-blue-glow:hover {
-  box-shadow: 0 10px 20px -10px rgba(15, 82, 186, 0.6);
-  transform: translateY(-2px);
+@media (hover: hover) {
+  .btn-blue-glow:hover {
+    box-shadow: 0 10px 20px -10px rgba(15, 82, 186, 0.6);
+    transform: translateY(-2px);
+  }
 }
 
 /* Glassmorphism Classes */
@@ -146,16 +150,18 @@ h1, h2, h3, h4, h5, h6 {
 .service-card {
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.service-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(212, 175, 55, 0.3);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(15, 82, 186, 0.02);
-}
+@media (hover: hover) {
+  .service-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(212, 175, 55, 0.3);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(15, 82, 186, 0.02);
+  }
 
-.service-card:hover .service-icon {
-  background-color: var(--color-blue);
-  color: white;
-  transform: scale(1.1) rotate(5deg);
+  .service-card:hover .service-icon {
+    background-color: var(--color-blue);
+    color: white;
+    transform: scale(1.1) rotate(5deg);
+  }
 }
 
 /* Active Nav Link Styling */
@@ -172,7 +178,12 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--color-gold);
   transition: width 0.3s ease;
 }
-.nav-link.active::after, .nav-link:hover::after {
+@media (hover: hover) {
+  .nav-link:hover::after {
+    width: 100%;
+  }
+}
+.nav-link.active::after {
   width: 100%;
 }
 .nav-link.active {
@@ -215,4 +226,28 @@ h1, h2, h3, h4, h5, h6 {
 #cookies-modal label input[type="checkbox"]:checked ~ div::after {
   transform: translateX(16px) !important;
 }
+
+/* ==================== MOBILE NAVIGATION DRAWER & CTA BAR ==================== */
+#mobile-menu-drawer {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#mobile-menu-drawer.active {
+  transform: translateX(0) !important;
+}
+
+#mobile-menu-backdrop {
+  transition: opacity 0.3s ease;
+}
+
+#mobile-menu-backdrop.active {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+/* Add smooth scroll margin for bottom safe areas */
+.pb-safe {
+  padding-bottom: min(20px, env(safe-area-inset-bottom));
+}
+
 
