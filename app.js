@@ -792,5 +792,132 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   
   injectWhatsAppButton();
+
+  // --- 7. CONTACT FORM WEBHOOK INTEGRATION (N8N) ---
+  const initContactForm = () => {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+
+    const formTitle = document.getElementById('form-title');
+    const formSuccess = document.getElementById('form-success');
+    const formError = document.getElementById('form-error');
+    const submitBtn = document.getElementById('btn-submit');
+    const resetBtn = document.getElementById('btn-reset-form');
+
+    // Webhook URLs
+    const WEBHOOK_TEST = 'https://primary-production-ab513.up.railway.app/webhook-test/d96b7277-8a39-43f8-9266-a63f2e98ea88';
+    const WEBHOOK_PROD = 'https://primary-production-ab513.up.railway.app/webhook/d96b7277-8a39-43f8-9266-a63f2e98ea88';
+
+    // Auto-detect environment
+    const isLocal = window.location.hostname === 'localhost' || 
+                     window.location.hostname === '127.0.0.1' || 
+                     window.location.protocol === 'file:';
+    
+    const webhookUrl = isLocal ? WEBHOOK_TEST : WEBHOOK_PROD;
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Reset error banner
+      formError.classList.add('hidden');
+
+      // Get values
+      const nameVal = document.getElementById('name').value.trim();
+      const phoneVal = document.getElementById('phone').value.trim();
+      const emailVal = document.getElementById('email').value.trim();
+      const interestVal = document.getElementById('interest').value;
+      const messageVal = document.getElementById('message').value.trim();
+      const consentVal = document.getElementById('consent').checked;
+
+      // Double check required fields
+      if (!nameVal || !phoneVal || !emailVal || !messageVal || !consentVal) {
+        formError.querySelector('p.text-xs').textContent = 'Por favor, rellene todos los campos obligatorios y acepte la política de privacidad.';
+        formError.classList.remove('hidden');
+        return;
+      }
+
+      // Payload structure
+      const payload = {
+        nombre: nameVal,
+        telefono: phoneVal,
+        email: emailVal,
+        tratamiento: interestVal,
+        mensaje: messageVal,
+        consentimiento: consentVal,
+        fecha_envio: new Date().toISOString()
+      };
+
+      // Loading state
+      const originalBtnContent = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `
+        <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        <span>Enviando solicitud...</span>
+      `;
+
+      try {
+        const response = await fetch(webhookUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+          // Success!
+          form.reset();
+          
+          // Hide title and form
+          if (formTitle) formTitle.classList.add('hidden');
+          form.classList.add('hidden');
+          
+          // Show success screen
+          formSuccess.classList.remove('hidden');
+          
+          // Refresh Lucide icons to draw the check icon in success card
+          if (window.lucide) {
+            window.lucide.createIcons();
+          }
+
+          // Smooth scroll to top of container
+          formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+          throw new Error('Server responded with an error');
+        }
+      } catch (error) {
+        console.error('Error submitting form:', error);
+        formError.querySelector('p.text-xs').innerHTML = `
+          Ha ocurrido un error al conectar con el servidor. Por favor, inténtalo de nuevo o llámanos directamente al <a href="tel:+34910248447" class="underline font-semibold text-rose-900">910 248 447</a>.
+        `;
+        formError.classList.remove('hidden');
+        formError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } finally {
+        // Restore button state
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnContent;
+      }
+    });
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        // Show form and title again
+        if (formTitle) formTitle.classList.remove('hidden');
+        form.classList.remove('hidden');
+        
+        // Hide success screen
+        formSuccess.classList.add('hidden');
+        formError.classList.add('hidden');
+        
+        // Reset form
+        form.reset();
+      });
+    }
+  };
+
+  initContactForm();
 });
 
