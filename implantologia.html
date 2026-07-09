@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Implantes Dentales e Implantología | Clínica Dental Ulident</title>
+  <meta name="description" content="Recupera tu sonrisa fija en un solo día con implantes dentales en Madrid. Especialistas en All-on-4, All-on-6 y cirugía guiada 3D.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.clinicadentalulident.com/implantologia.html">
+  
+  <!-- Tailwind CSS CDN with configuration -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#0F52BA',
+              bluelight: '#F0F5FF',
+              bluedark: '#0A3D8A',
+              gold: '#D4AF37',
+              goldlight: '#FAF5E6',
+              goldhover: '#AA8C2C',
+              bg: '#FAFAFA',
+              dark: '#0F172A',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Montserrat', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-brand-bg text-slate-800 antialiased font-sans flex flex-col min-h-screen">
+
+  <!-- ==================== NAVBAR ==================== -->
+  <header class="fixed top-0 left-0 w-full z-50 glass-nav transition-all duration-300 py-5">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 flex justify-between items-center">
+      
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center space-x-3 group">
+        <svg viewBox="0 0 100 100" class="w-11 h-11 text-white fill-none stroke-white" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M50,80 C22,58 10,40 10,26 C10,14 19,8 29,8 C37,8 44,13 50,18 C56,13 63,8 71,8 C81,8 90,14 90,26 C90,40 78,58 50,80 Z" />
+          <path d="M50,18 L73,41 L50,64 L27,41 Z" />
+        </svg>
+        <div class="flex flex-col">
+          <span class="font-heading font-extrabold text-2xl tracking-wide text-white leading-none">ULIDENT</span>
+          <span class="text-[7.5px] uppercase tracking-[0.2em] text-white/80 font-semibold mt-1">PERFECT & NATURAL SMILE</span>
+        </div>
+      </a>
+
+      <!-- Desktop Menu Links -->
+      <nav class="hidden lg:flex space-x-6 items-center">
+        <!-- Tratamientos with Dropdown -->
+        <div class="relative group">
+          <a href="index.html#servicios" class="nav-link text-sm font-semibold text-white/90 hover:text-brand-gold flex items-center space-x-1 py-2 transition-colors">
+            <span>Tratamientos</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+          </a>
+          <!-- Dropdown Menu -->
+          <div class="absolute top-full left-0 mt-2 w-[550px] bg-white rounded-3xl shadow-2xl border border-slate-100 p-6 hidden group-hover:block transition-all duration-300 z-50">
+            <div class="grid grid-cols-2 gap-4">
+              <!-- Left Column -->
+              <div class="space-y-2">
+                <a href="odontologia-general.html" class="flex items-center space-x-3 p-3 rounded-2xl hover:bg-brand-bluelight/70 transition-colors group/item">
+                  <div class="w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue flex items-center justify-center flex-shrink-0 group-hover/item:bg-brand-blue group-hover/item:text-white transition-colors">
+                    <i data-lucide="stethoscope" class="w-5 h-5"></i>
+                  </div>
+                  <span class="text-sm font-semibold text-slate-800 group-hover/item:text-brand-blue transition-colors">Odontología</span>
+                </a>
+                <a href="implantologia.html" class="flex items-center space-x-3 p-3 rounded-2xl hover:bg-brand-bluelight/70 transition-colors group/item">
+                  <div class="w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue flex items-center justify-center flex-shrink-0 group-hover/item:bg-brand-blue group-hover/item:text-white transition-colors">
+                    <i data-lucide="crown" class="w-5 h-5"></i>
+                  </div>
+                  <span class="text-sm font-semibold text-slate-800 group-hover/item:text-brand-blue transition-colors text-brand-gold font-bold">Implantología</span>
+                </a>
+                <a href="ortodoncia.html" class="flex items-center space-x-3 p-3 rounded-2xl hover:bg-brand-bluelight/70 transition-colors group/item">
+                  <div class="w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue flex items-center justify-center flex-shrink-0 group-hover/item:bg-brand-blue group-hover/item:text-white transition-colors">
+                    <i data-lucide="grid" class="w-5 h-5"></i>
+                  </div>
+                  <span class="text-sm font-semibold text-slate-800 group-hover/item:text-brand-blue transition-colors">Ortodoncia</span>
+                </a>
+                <a href="estetica-dental.html#dsd" class="flex items-center space-x-3 p-3 rounded-2xl hover:bg-brand-bluelight/70 transition-colors group/item">
+                  <div class="w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue flex items-center justify-center flex-shrink-0 group-hover/item:bg-brand-blue group-hover/item:text-white transition-colors">
+                    <i data-lucide="monitor" class="w-5 h-5"></i>
+                  </div>
+                  <span class="text-sm font-semibold text-slate-800 group-hover/item:text-brand-blue transition-colors">Digital Smile Design</span>
+                </a>
+              </div>
+              <!-- Right Column -->
+              <div class="space-y-2">
+                <a href="odontopediatria.html" class="flex items-center space-x-3 p-3 rounded-2xl hover:bg-brand-bluelight/70 transition-colors group/item">
+                  <div class="w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue flex items-center justify-center flex-shrink-0 group-hover/item:bg-brand-blue group-hover/item:text-white transition-colors">
+                    <i data-lucide="baby" class="w-5 h-5"></i>
+                  </div>
+                  <span class="text-sm font-semibold text-slate-800 group-hover/item:text-brand-blue transition-colors">Odontopediatría</span>
+                </a>
+                <a href="estetica-dental.html#blanqueamiento" class="flex items-center space-x-3 p-3 rounded-2xl hover:bg-brand-bluelight/70 transition-colors group/item">
+                  <div class="w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue flex items-center justify-center flex-shrink-0 group-hover/item:bg-brand-blue group-hover/item:text-white transition-colors">
+                    <i data-lucide="sun" class="w-5 h-5"></i>
+                  </div>
+                  <span class="text-sm font-semibold text-slate-800 group-hover/item:text-brand-blue transition-colors">Blanqueamiento dental</span>
+                </a>
+                <a href="estetica-dental.html#carillas" class="flex items-center space-x-3 p-3 rounded-2xl hover:bg-brand-bluelight/70 transition-colors group/item">
+                  <div class="w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue flex items-center justify-center flex-shrink-0 group-hover/item:bg-brand-blue group-hover/item:text-white transition-colors">
+                    <i data-lucide="layers" class="w-5 h-5"></i>
+                  </div>
+                  <span class="text-sm font-semibold text-slate-800 group-hover/item:text-brand-blue transition-colors">Carillas</span>
+                </a>
+                <a href="estetica-dental.html#joya-dental" class="flex items-center space-x-3 p-3 rounded-2xl hover:bg-brand-bluelight/70 transition-colors group/item">
+                  <div class="w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue flex items-center justify-center flex-shrink-0 group-hover/item:bg-brand-blue group-hover/item:text-white transition-colors">
+                    <i data-lucide="gem" class="w-5 h-5"></i>
+                  </div>
+                  <span class="text-sm font-semibold text-slate-800 group-hover/item:text-brand-blue transition-colors">Joya Dental</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="nosotros.html" class="nav-link text-sm font-semibold text-white/90 hover:text-brand-gold transition-colors">Nosotros</a>
+        <a href="index.html#financiacion" class="nav-link text-sm font-semibold text-white/90 hover:text-brand-gold transition-colors">Financiación</a>
+        <a href="contacto.html" class="nav-link text-sm font-semibold text-white/90 hover:text-brand-gold transition-colors">Contacto</a>
+      </nav>
+
+      <!-- Desktop Action Button -->
+      <div class="hidden lg:block">
+        <a href="tel:+34910248447" class="px-5 py-2.5 rounded-lg text-sm font-bold text-[#0B3A70] hover:text-[#0A3363] bg-white hover:bg-slate-100 shadow-md hover:shadow-lg transition-all flex items-center space-x-2">
+          <i data-lucide="phone" class="w-4 h-4 text-[#0B3A70] fill-current"></i>
+          <span>Llamar 910 248 447</span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="lg:hidden p-2 text-white/90 focus:outline-none" aria-label="Abrir menú de navegación">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-slate-900/98 backdrop-blur-md absolute top-full left-0 w-full border-b border-white/10 shadow-xl py-6 px-6 z-50">
+      <nav class="flex flex-col space-y-4">
+        <div class="space-y-2">
+          <p class="text-xs uppercase tracking-wider text-slate-400 font-bold">Tratamientos</p>
+          <div class="grid grid-cols-2 gap-2 pl-2">
+            <a href="odontologia-general.html" class="text-sm font-semibold text-slate-200 hover:text-brand-gold py-1">Odontología</a>
+            <a href="odontopediatria.html" class="text-sm font-semibold text-slate-200 hover:text-brand-gold py-1">Odontopediatría</a>
+            <a href="implantologia.html" class="text-sm font-semibold text-slate-200 hover:text-brand-gold py-1 text-brand-gold font-bold">Implantología</a>
+            <a href="estetica-dental.html#blanqueamiento" class="text-sm font-semibold text-slate-200 hover:text-brand-gold py-1">Blanqueamiento</a>
+            <a href="ortodoncia.html" class="text-sm font-semibold text-slate-200 hover:text-brand-gold py-1">Ortodoncia</a>
+            <a href="estetica-dental.html#carillas" class="text-sm font-semibold text-slate-200 hover:text-brand-gold py-1">Carillas</a>
+            <a href="estetica-dental.html#dsd" class="text-sm font-semibold text-slate-200 hover:text-brand-gold py-1">Digital Smile Design</a>
+            <a href="estetica-dental.html#joya-dental" class="text-sm font-semibold text-slate-200 hover:text-brand-gold py-1">Joya Dental</a>
+          </div>
+        </div>
+        <hr class="border-white/10">
+        <a href="nosotros.html" class="text-base font-semibold text-white/90 hover:text-brand-gold transition-colors">Nosotros</a>
+        <a href="index.html#financiacion" class="text-base font-semibold text-white/90 hover:text-brand-gold transition-colors">Financiación</a>
+        <a href="contacto.html" class="text-base font-semibold text-white/90 hover:text-brand-gold transition-colors">Contacto</a>
+        <hr class="border-white/10">
+        <a href="tel:+34910248447" class="text-center py-3 rounded-lg text-base font-bold text-[#0B3A70] bg-white hover:bg-slate-100 transition-colors flex items-center justify-center space-x-2">
+          <i data-lucide="phone" class="w-4 h-4 fill-current"></i>
+          <span>Llamar 910 248 447</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECCIÓN ==================== -->
+  <section class="relative bg-gradient-to-b from-brand-blue to-brand-bluedark text-white pt-40 pb-20 overflow-hidden">
+    <div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-white/10 blur-3xl -z-10"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center space-y-6 relative z-10 reveal-item">
+      <!-- Breadcrumbs -->
+      <nav class="flex justify-center space-x-2 text-xs font-semibold text-white/70 uppercase tracking-widest">
+        <a href="index.html" class="hover:text-brand-gold transition-colors">Inicio</a>
+        <span>/</span>
+        <span class="text-brand-gold">Tratamientos</span>
+        <span>/</span>
+        <span class="text-brand-gold">Implantología</span>
+      </nav>
+      <h1 class="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-tight">
+        Implantología Avanzada
+      </h1>
+      <p class="text-lg text-slate-200 max-w-2xl mx-auto leading-relaxed">
+        Recupera la masticación y la estética natural de tu boca con soluciones de titanio fijas e indoloras mediante la tecnología de carga inmediata.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== SECCIÓN 1: IMPLANTES EN UN DÍA ==================== -->
+  <section id="carga-inmediata" class="py-20 bg-white relative">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-12 gap-12 items-center">
+      <!-- Image Column -->
+      <div class="lg:col-span-5 relative reveal-item">
+        <div class="absolute -inset-4 rounded-3xl border border-brand-gold/20 rotate-3 z-0"></div>
+        <div class="relative bg-white p-4 rounded-3xl shadow-xl z-10">
+          <img src="assets/doctor_luis.png" alt="Dr. Luis Moreno en consulta" class="w-full h-80 object-cover rounded-2xl">
+        </div>
+      </div>
+      <!-- Text Column -->
+      <div class="lg:col-span-7 space-y-6 reveal-item delay-100">
+        <div class="inline-flex items-center space-x-2 bg-brand-bluelight px-3 py-1 rounded-full text-xs font-bold text-brand-blue border border-brand-blue/10">
+          <span> Carga Inmediata Dental </span>
+        </div>
+        <h2 class="font-heading font-extrabold text-3xl text-slate-900 leading-tight">
+          Implantes en un solo día: Sonríe sin esperas
+        </h2>
+        <p class="text-slate-600 leading-relaxed">
+          Gracias al protocolo de **carga inmediata**, ya no tienes que esperar meses sin dientes mientras cicatriza el implante. El Dr. Luis Moreno realiza la colocación del implante de titanio (que sustituye a la raíz dental) y, en la misma sesión o en menos de 24 horas, fija una prótesis provisional estética y funcional. Esto te permite salir de la clínica sonriendo y volver a comer alimentos blandos de forma inmediata, sin alterar tu vida social.
+        </p>
+        <ul class="space-y-3">
+          <li class="flex items-start space-x-2 text-slate-700 text-sm">
+            <i data-lucide="check" class="text-brand-blue w-4 h-4 mt-0.5 flex-shrink-0"></i>
+            <span><strong>Sin periodos sin dientes:</strong> La prótesis fija provisional se coloca el mismo día de la cirugía.</span>
+          </li>
+          <li class="flex items-start space-x-2 text-slate-700 text-sm">
+            <i data-lucide="check" class="text-brand-blue w-4 h-4 mt-0.5 flex-shrink-0"></i>
+            <span><strong>Materiales Premium:</strong> Implantes de titanio biocompatible de máxima pureza para asegurar la osteointegración.</span>
+          </li>
+          <li class="flex items-start space-x-2 text-slate-700 text-sm">
+            <i data-lucide="check" class="text-brand-blue w-4 h-4 mt-0.5 flex-shrink-0"></i>
+            <span><strong>Postoperatorio Confortable:</strong> Técnicas microquirúrgicas con menor inflamación y molestias.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECCIÓN 2: REHABILITACIÓN COMPLETA ALL-ON-4 / ALL-ON-6 ==================== -->
+  <section id="all-on" class="py-20 bg-brand-bg relative border-t border-slate-100">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-12 gap-12 items-center">
+      <!-- Text Column -->
+      <div class="lg:col-span-7 space-y-6 reveal-item">
+        <h2 class="text-xs font-bold text-brand-blue tracking-widest uppercase">Rehabilitación Total de Arcada</h2>
+        <h3 class="font-heading font-extrabold text-3xl text-slate-900 leading-tight">
+          Sistemas All-on-4 y All-on-6
+        </h3>
+        <p class="text-slate-600 leading-relaxed">
+          Para pacientes que han perdido todas sus piezas dentales en una arcada o que tienen dientes muy deteriorados, las técnicas **All-on-4** y **All-on-6** suponen un cambio de vida radical. Estos sistemas permiten fijar una dentadura completa atornillada utilizando únicamente 4 o 6 implantes dentales colocados estratégicamente.
+        </p>
+        <p class="text-slate-600 leading-relaxed">
+          Incluso en pacientes con una pérdida ósea moderada, esta técnica permite angular los implantes posteriores para aprovechar al máximo el hueso existente, evitando a menudo la necesidad de costosos injertos óseos o elevaciones de seno maxilar. Consigues una sonrisa fija, estable y muy natural con una intervención quirúrgica única y un coste optimizado.
+        </p>
+      </div>
+      <!-- Info Box Column -->
+      <div class="lg:col-span-5 reveal-item delay-100">
+        <div class="bg-white rounded-3xl p-8 border border-slate-100 space-y-6 shadow-md">
+          <h3 class="font-heading font-bold text-xl text-slate-900 flex items-center">
+            <i data-lucide="activity" class="text-brand-blue mr-2"></i> Ventajas Clave
+          </h3>
+          <div class="space-y-4 text-sm text-slate-600">
+            <p><strong>1. Mayor Estabilidad:</strong> Olvídate de los adhesivos y los movimientos de las dentaduras postizas removibles tradicionales.</p>
+            <p><strong>2. Menor Cirugía:</strong> Solo 4 o 6 implantes son necesarios en lugar de un implante por cada diente perdido.</p>
+            <p><strong>3. Preservación Ósea:</strong> Los implantes estimulan el hueso maxilar evitando su reabsorción y el envejecimiento facial prematuro.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECCIÓN 3: CIRUGÍA GUIADA POR ORDENADOR ==================== -->
+  <section id="cirugia-guiada" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-12 gap-12 items-center">
+      <!-- Graphics Column -->
+      <div class="lg:col-span-5 order-last lg:order-first reveal-item">
+        <div class="bg-brand-bluelight/70 rounded-3xl p-8 border border-brand-blue/10 space-y-6">
+          <h3 class="font-heading font-bold text-xl text-slate-900">Cirugía Implantológica Guiada</h3>
+          <div class="space-y-4 text-xs sm:text-sm">
+            <div class="flex items-start space-x-2">
+              <i data-lucide="check-circle-2" class="text-brand-blue w-5 h-5 flex-shrink-0"></i>
+              <span>Planificación quirúrgica virtual previa en base a imágenes CBCT 3D.</span>
+            </div>
+            <div class="flex items-start space-x-2">
+              <i data-lucide="check-circle-2" class="text-brand-blue w-5 h-5 flex-shrink-0"></i>
+              <span>Diseño e impresión 3D de una férula o guía quirúrgica de alta precisión.</span>
+            </div>
+            <div class="flex items-start space-x-2">
+              <i data-lucide="check-circle-2" class="text-brand-blue w-5 h-5 flex-shrink-0"></i>
+              <span>Inserción del implante a través de la guía sin necesidad de abrir la encía ni dar puntos en muchos casos.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Text Column -->
+      <div class="lg:col-span-7 space-y-6 reveal-item delay-100">
+        <h2 class="text-xs font-bold text-brand-blue tracking-widest uppercase">Tecnología y Precisión</h2>
+        <h3 class="font-heading font-extrabold text-3xl text-slate-900 leading-tight">
+          Cirugía Guiada por Ordenador
+        </h3>
+        <p class="text-slate-600 leading-relaxed">
+          En Clínica Dental Ulident planificamos todas nuestras cirugías de implantes utilizando software de simulación tridimensional. Mediante la superposición del escaneado 3D intraoral y la radiografía CBCT de tu hueso, el Dr. Luis Moreno determina la posición, inclinación y profundidad exacta del implante antes de tocar tu boca.
+        </p>
+        <p class="text-slate-600 leading-relaxed">
+          Esta planificación virtual nos permite crear una guía física que encaja en tu boca y nos indica el punto exacto de perforación. Este método reduce el tiempo de la intervención a la mitad, evita incisiones innecesarias, minimiza el sangrado y favorece una cicatrización ultrarrápida.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CALL TO ACTION ==================== -->
+  <section class="py-16 bg-brand-bluelight/70 border-t border-brand-blue/10">
+    <div class="max-w-4xl mx-auto px-6 text-center space-y-8 reveal-item">
+      <h3 class="font-heading font-extrabold text-2xl sm:text-3xl text-slate-900">
+        ¿Has perdido uno o varios dientes? Recupera tu Smile
+      </h3>
+      <p class="text-slate-600 text-sm sm:text-base max-w-xl mx-auto">
+        Reserva tu cita de diagnóstico gratuito para implantes. Incluye radiografía panorámica en 3D, examen óseo y presupuesto cerrado.
+      </p>
+      <div class="flex justify-center">
+        <a href="index.html#reserva" class="btn-blue-glow bg-brand-blue text-white px-8 py-4 rounded-full font-bold shadow-lg hover:bg-brand-bluedark transition-all">
+          Reservar Diagnóstico de Implantes Gratis
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-brand-dark text-slate-300 pt-16 mt-auto">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 pb-12 grid md:grid-cols-3 gap-8 border-b border-white/5">
+      <div class="space-y-4">
+        <a href="index.html" class="flex items-center space-x-3 group">
+          <svg viewBox="0 0 100 100" class="w-10 h-10 text-white fill-none stroke-white" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M50,80 C22,58 10,40 10,26 C10,14 19,8 29,8 C37,8 44,13 50,18 C56,13 63,8 71,8 C81,8 90,14 90,26 C90,40 78,58 50,80 Z" />
+            <path d="M50,18 L73,41 L50,64 L27,41 Z" />
+          </svg>
+          <span class="font-heading font-extrabold text-xl text-white">Ulident.</span>
+        </a>
+        <p class="text-slate-400 text-sm max-w-sm">
+          Clínica dental con trato humano y tecnología de última generación en el corazón de la ciudad. Tu salud dental en manos de confianza.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <h4 class="font-heading font-bold text-white text-sm uppercase tracking-wider">Enlaces Rápidos</h4>
+        <div class="grid grid-cols-2 gap-2 text-sm text-slate-400">
+          <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
+          <a href="nosotros.html" class="hover:text-white transition-colors">Nosotros</a>
+          <a href="index.html#servicios" class="hover:text-white transition-colors text-brand-gold font-semibold">Tratamientos</a>
+          <a href="index.html#financiacion" class="hover:text-white transition-colors">Financiación</a>
+          <a href="contacto.html" class="hover:text-white transition-colors">Contacto</a>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <h4 class="font-heading font-bold text-white text-sm uppercase tracking-wider">Contacto Oficial</h4>
+        <p class="text-slate-400 text-sm">Av. del Marqués de Corbera, 14, 28017 Madrid</p>
+        <p class="text-slate-400 text-sm">Teléfono: <a href="tel:+34910248447" class="hover:text-white">910 248 447</a></p>
+        <p class="text-slate-400 text-sm">Email: <a href="mailto:sonrie@clinicaulident.com" class="hover:text-white">sonrie@clinicaulident.com</a></p>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-6 text-center text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p>&copy; 2026 Clínica Dental Ulident. Todos los derechos reservados.</p>
+      <div class="flex space-x-4">
+        <a href="aviso-legal.html" class="hover:underline">Aviso Legal</a>
+        <a href="politica-privacidad.html" class="hover:underline">Política de Privacidad</a>
+        <a href="politica-cookies.html" class="hover:underline">Cookies</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core Javascript File -->
+  <script src="app.js"></script>
+</body>
+</html>

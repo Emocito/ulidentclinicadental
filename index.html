@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clínica Dental Ulident | Tu Sonrisa en las Mejores Manos</title>
+  <meta name="description" content="Clínica dental de vanguardia en Madrid con un enfoque familiar y la tecnología más avanzada. Primera visita con diagnóstico y radiografía gratuita.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.clinicadentalulident.com">
+  
+  <!-- Tailwind CSS CDN with configuration -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#0F52BA',      /* Cobalt/Electric Blue */
+              bluelight: '#F0F5FF', /* Soft blue for highlights */
+              bluedark: '#0A3D8A',  /* Darker blue for text/hover */
+              gold: '#D4AF37',      /* Elegant Gold */
+              goldlight: '#FAF5E6', /* Soft gold background */
+              goldhover: '#AA8C2C', /* Gold hover state */
+              bg: '#FAFAFA',        /* Clean space color */
+              dark: '#0F172A',      /* Dark slate for high-contrast footer */
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Montserrat', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-brand-bg text-slate-800 antialiased font-sans">
+
+  <!-- ==================== 1. NAVBAR (MENÚ DE NAVEGACIÓN) ==================== -->
+  <header class="fixed top-0 left-0 w-full z-50 glass-nav transition-all duration-300 py-5">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 flex justify-between items-center">
+      
+      <!-- Logo -->
+      <a href="#inicio" class="flex items-center space-x-3 group">
+        <!-- SVG Logo exact recreation -->
+        <svg viewBox="0 0 100 100" class="w-11 h-11 text-white fill-none stroke-white" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M50,80 C22,58 10,40 10,26 C10,14 19,8 29,8 C37,8 44,13 50,18 C56,13 63,8 71,8 C81,8 90,14 90,26 C90,40 78,58 50,80 Z" />
+          <path d="M50,18 L73,41 L50,64 L27,41 Z" />
+        </svg>
+        <div class="flex flex-col">
+          <span class="font-heading font-extrabold text-2xl tracking-wide text-white leading-none">ULIDENT</span>
+          <span class="text-[7.5px] uppercase tracking-[0.2em] text-white/80 font-semibold mt-1">PERFECT & NATURAL SMILE</span>
+        </div>
+      </a>
+
+      <!-- Desktop Menu Links -->
+      <nav class="hidden lg:flex space-x-6 items-center">
+        <!-- Tratamientos with Dropdown -->
+        <div class="relative group">
+          <a href="index.html#servicios" class="nav-link text-sm font-semibold text-white/90 hover:text-brand-gold flex items-center space-x-1 py-2 transition-colors">
+            <span>Tratamientos</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+          </a>
+          <!-- Dropdown Menu (2 columns, premium layout matching screenshot) -->
+          <div class="absolute top-full left-0 mt-2 w-[550px] bg-white rounded-3xl shadow-2xl border border-slate-100 p-6 hidden group-hover:block transition-all duration-300 z-50">
+            <div class="grid grid-cols-2 gap-4">
+              <!-- Left Column -->
+              <div class="space-y-2">
+                <a href="odontologia-general.html" class="flex items-center space-x-3 p-3 rounded-2xl hover:bg-brand-bluelight/70 transition-colors group/item">
+                  <div class="w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue flex items-center justify-center flex-shrink-0 group-hover/item:bg-brand-blue group-hover/item:text-white transition-colors">
+                    <i data-lucide="stethoscope" class="w-5 h-5"></i>
+                  </div>
+                  <span class="text-sm font-semibold text-slate-800 group-hover/item:text-brand-blue transition-colors">Odontología</span>
+                </a>
+                <a href="implantologia.html" class="flex items-center space-x-3 p-3 rounded-2xl hover:bg-brand-bluelight/70 transition-colors group/item">
+                  <div class="w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue flex items-center justify-center flex-shrink-0 group-hover/item:bg-brand-blue group-hover/item:text-white transition-colors">
+                    <i data-lucide="crown" class="w-5 h-5"></i>
+                  </div>
+                  <span class="text-sm font-semibold text-slate-800 group-hover/item:text-brand-blue transition-colors">Implantología</span>
+                </a>
+                <a href="ortodoncia.html" class="flex items-center space-x-3 p-3 rounded-2xl hover:bg-brand-bluelight/70 transition-colors group/item">
+                  <div class="w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue flex items-center justify-center flex-shrink-0 group-hover/item:bg-brand-blue group-hover/item:text-white transition-colors">
+                    <i data-lucide="grid" class="w-5 h-5"></i>
+                  </div>
+                  <span class="text-sm font-semibold text-slate-800 group-hover/item:text-brand-blue transition-colors">Ortodoncia</span>
+                </a>
+                <a href="estetica-dental.html#dsd" class="flex items-center space-x-3 p-3 rounded-2xl hover:bg-brand-bluelight/70 transition-colors group/item">
+                  <div class="w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue flex items-center justify-center flex-shrink-0 group-hover/item:bg-brand-blue group-hover/item:text-white transition-colors">
+                    <i data-lucide="monitor" class="w-5 h-5"></i>
+                  </div>
+                  <span class="text-sm font-semibold text-slate-800 group-hover/item:text-brand-blue transition-colors">Digital Smile Design</span>
+                </a>
+              </div>
+              <!-- Right Column -->
+              <div class="space-y-2">
+                <a href="odontopediatria.html" class="flex items-center space-x-3 p-3 rounded-2xl hover:bg-brand-bluelight/70 transition-colors group/item">
+                  <div class="w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue flex items-center justify-center flex-shrink-0 group-hover/item:bg-brand-blue group-hover/item:text-white transition-colors">
+                    <i data-lucide="baby" class="w-5 h-5"></i>
+                  </div>
+                  <span class="text-sm font-semibold text-slate-800 group-hover/item:text-brand-blue transition-colors">Odontopediatría</span>
+                </a>
+                <a href="estetica-dental.html#blanqueamiento" class="flex items-center space-x-3 p-3 rounded-2xl hover:bg-brand-bluelight/70 transition-colors group/item">
+                  <div class="w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue flex items-center justify-center flex-shrink-0 group-hover/item:bg-brand-blue group-hover/item:text-white transition-colors">
+                    <i data-lucide="sun" class="w-5 h-5"></i>
+                  </div>
+                  <span class="text-sm font-semibold text-slate-800 group-hover/item:text-brand-blue transition-colors">Blanqueamiento dental</span>
+                </a>
+                <a href="estetica-dental.html#carillas" class="flex items-center space-x-3 p-3 rounded-2xl hover:bg-brand-bluelight/70 transition-colors group/item">
+                  <div class="w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue flex items-center justify-center flex-shrink-0 group-hover/item:bg-brand-blue group-hover/item:text-white transition-colors">
+                    <i data-lucide="layers" class="w-5 h-5"></i>
+                  </div>
+                  <span class="text-sm font-semibold text-slate-800 group-hover/item:text-brand-blue transition-colors">Carillas</span>
+                </a>
+                <a href="estetica-dental.html#joya-dental" class="flex items-center space-x-3 p-3 rounded-2xl hover:bg-brand-bluelight/70 transition-colors group/item">
+                  <div class="w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue flex items-center justify-center flex-shrink-0 group-hover/item:bg-brand-blue group-hover/item:text-white transition-colors">
+                    <i data-lucide="gem" class="w-5 h-5"></i>
+                  </div>
+                  <span class="text-sm font-semibold text-slate-800 group-hover/item:text-brand-blue transition-colors">Joya Dental</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="nosotros.html" class="nav-link text-sm font-semibold text-white/90 hover:text-brand-gold transition-colors">Nosotros</a>
+        <a href="index.html#financiacion" class="nav-link text-sm font-semibold text-white/90 hover:text-brand-gold transition-colors">Financiación</a>
+        <a href="contacto.html" class="nav-link text-sm font-semibold text-white/90 hover:text-brand-gold transition-colors">Contacto</a>
+      </nav>
+
+      <!-- Desktop Action Button -->
+      <div class="hidden lg:block">
+        <a href="tel:+34910248447" class="px-5 py-2.5 rounded-lg text-sm font-bold text-[#0B3A70] hover:text-[#0A3363] bg-white hover:bg-slate-100 shadow-md hover:shadow-lg transition-all flex items-center space-x-2">
+          <i data-lucide="phone" class="w-4 h-4 text-[#0B3A70] fill-current"></i>
+          <span>Llamar 910 248 447</span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="lg:hidden p-2 text-white/90 focus:outline-none" aria-label="Abrir menú de navegación">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-slate-900/98 backdrop-blur-md absolute top-full left-0 w-full border-b border-white/10 shadow-xl py-6 px-6 z-50">
+      <nav class="flex flex-col space-y-4">
+        <!-- Tratamientos sublinks in Mobile -->
+        <div class="space-y-2">
+          <p class="text-xs uppercase tracking-wider text-slate-400 font-bold">Tratamientos</p>
+          <div class="grid grid-cols-2 gap-2 pl-2">
+            <a href="odontologia-general.html" class="text-sm font-semibold text-slate-200 hover:text-brand-gold py-1">Odontología</a>
+            <a href="odontopediatria.html" class="text-sm font-semibold text-slate-200 hover:text-brand-gold py-1">Odontopediatría</a>
+            <a href="implantologia.html" class="text-sm font-semibold text-slate-200 hover:text-brand-gold py-1">Implantología</a>
+            <a href="estetica-dental.html#blanqueamiento" class="text-sm font-semibold text-slate-200 hover:text-brand-gold py-1">Blanqueamiento</a>
+            <a href="ortodoncia.html" class="text-sm font-semibold text-slate-200 hover:text-brand-gold py-1">Ortodoncia</a>
+            <a href="estetica-dental.html#carillas" class="text-sm font-semibold text-slate-200 hover:text-brand-gold py-1">Carillas</a>
+            <a href="estetica-dental.html#dsd" class="text-sm font-semibold text-slate-200 hover:text-brand-gold py-1">Digital Smile Design</a>
+            <a href="estetica-dental.html#joya-dental" class="text-sm font-semibold text-slate-200 hover:text-brand-gold py-1">Joya Dental</a>
+          </div>
+        </div>
+        <hr class="border-white/10">
+        <a href="nosotros.html" class="text-base font-semibold text-white/90 hover:text-brand-gold transition-colors">Nosotros</a>
+        <a href="index.html#financiacion" class="text-base font-semibold text-white/90 hover:text-brand-gold transition-colors">Financiación</a>
+        <a href="contacto.html" class="text-base font-semibold text-white/90 hover:text-brand-gold transition-colors">Contacto</a>
+        <hr class="border-white/10">
+        <a href="tel:+34910248447" class="text-center py-3 rounded-lg text-base font-bold text-[#0B3A70] bg-white hover:bg-slate-100 transition-colors flex items-center justify-center space-x-2">
+          <i data-lucide="phone" class="w-4 h-4 fill-current"></i>
+          <span>Llamar 910 248 447</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== 2. HERO SECTION (INICIO) ==================== -->
+  <section id="inicio" class="relative min-h-screen pt-32 pb-20 flex items-center overflow-hidden">
+    <!-- Floating Background Orbs -->
+    <div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-brand-bluelight/60 blur-3xl floating-circle-1 -z-10"></div>
+    <div class="absolute top-1/2 -right-32 w-[500px] h-[500px] rounded-full bg-brand-goldlight/40 blur-3xl floating-circle-2 -z-10"></div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 w-full">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Hero Text Content -->
+        <div class="lg:col-span-7 space-y-8 reveal-item">
+          <!-- Premium Gold Badge -->
+          <div class="inline-flex items-center space-x-2 bg-white px-4 py-2 rounded-full shadow-sm border border-brand-gold/20">
+            <span class="flex h-2.5 w-2.5 relative">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-blue opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-blue"></span>
+            </span>
+            <span class="text-xs font-semibold text-brand-dark tracking-wide uppercase">Cercanía familiar & Tecnología dental</span>
+          </div>
+
+          <!-- Hero Headline -->
+          <h1 class="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-slate-900 leading-[1.15]">
+            Tu sonrisa en las <br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-blue-500">mejores manos</span>: <br>
+            <span class="font-normal italic font-sans text-3xl sm:text-4xl text-slate-600 block mt-2">el cuidado de siempre.</span>
+          </h1>
+
+          <!-- Hero Subtitle -->
+          <p class="text-lg text-slate-600 max-w-xl leading-relaxed">
+            En Clínica Dental Ulident combinamos tecnología clínica de vanguardia con un trato profundamente humano y cercano. Nos tomamos el tiempo para escucharte y diseñar el tratamiento que realmente necesitas, sin prisas y sin dolor.
+          </p>
+
+          <!-- Action CTA Group -->
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#reserva" class="btn-blue-glow bg-brand-blue text-white px-8 py-4 rounded-full font-bold text-center shadow-lg hover:bg-brand-bluedark transition-all">
+              Reserva tu primera visita
+            </a>
+            <a href="#servicios" class="border border-slate-300 hover:border-brand-blue bg-white/50 text-slate-700 px-8 py-4 rounded-full font-semibold text-center hover:text-brand-blue transition-all">
+              Ver tratamientos
+            </a>
+          </div>
+
+          <!-- Trust Indicators -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-4 border-t border-slate-200/60 max-w-lg">
+            <div class="space-y-1">
+              <p class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Primera Cita</p>
+              <p class="text-sm font-bold text-slate-700">100% Gratuita</p>
+            </div>
+            <div class="space-y-1">
+              <p class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Pacientes Felices</p>
+              <p class="text-sm font-bold text-slate-700">+10.000 sonrisas</p>
+            </div>
+            <div class="space-y-1 col-span-2 sm:col-span-1">
+              <p class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Financiación</p>
+              <p class="text-sm font-bold text-slate-700">A tu medida</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Image Panel -->
+        <div class="lg:col-span-5 relative reveal-item delay-200">
+          <div class="relative mx-auto max-w-[450px] lg:max-w-none">
+            <!-- Decorative border accent -->
+            <div class="absolute -inset-4 rounded-3xl border border-brand-gold/30 -rotate-3 z-0"></div>
+            <!-- Main Photo Container -->
+            <div class="relative bg-white p-4 rounded-3xl shadow-2xl rotate-2 z-10 overflow-hidden">
+              <img src="assets/clinic_reception_meet.png?v=1.1" alt="Instalaciones premium de Clínica Ulident" class="w-full h-80 lg:h-[450px] object-cover rounded-2xl">
+              <!-- Inline Floating Card -->
+              <div class="absolute bottom-8 left-8 right-8 glass-card p-4 rounded-2xl border border-white/60 shadow-xl flex items-center space-x-4">
+                <div class="p-3 bg-brand-blue/10 rounded-xl text-brand-blue">
+                  <i data-lucide="shield-check" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-brand-blue font-bold tracking-wider uppercase">Garantía Ulident</p>
+                  <p class="text-sm font-semibold text-slate-800">Clínica certificada en Bioseguridad</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 3. QUIÉNES SOMOS / NUESTRO EQUIPO ==================== -->
+  <section id="nosotros" class="py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-20 reveal-item">
+        <h2 class="text-xs font-bold text-brand-blue tracking-widest uppercase mb-3">La cercanía nos define</h2>
+        <p class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 leading-tight">
+          Un proyecto familiar enfocado en tu bienestar integral
+        </p>
+        <p class="text-slate-600 mt-4 text-base">
+          En Ulident no eres un número de expediente. Fundamos esta clínica con la ilusión de ofrecer un espacio sin estrés, donde te sientas escuchado y atendido por profesionales que adoran su vocación.
+        </p>
+      </div>
+
+      <!-- Content Split Grid -->
+      <div class="grid lg:grid-cols-12 gap-12 items-center mb-24">
+        
+        <!-- Story Text -->
+        <div class="lg:col-span-6 space-y-6 reveal-item">
+          <h3 class="font-heading font-bold text-2xl text-slate-800">Tecnología de última generación con el trato humano de siempre</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Creemos que la innovación tecnológica debe estar al servicio de la comodidad del paciente. Por ello, contamos con diagnóstico digital 3D de mínima radiación, tratamientos guiados por ordenador y opciones de sedación consciente para que el dolor no vuelva a ser un obstáculo para cuidar de tu salud.
+          </p>
+          
+          <!-- Core values lists -->
+          <ul class="space-y-4">
+            <li class="flex items-start space-x-3">
+              <div class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue">
+                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+              </div>
+              <span class="text-slate-700 font-medium"><strong class="text-slate-900">Enfoque Preventivo:</strong> Te ayudamos a prevenir antes que curar, educando a toda la familia.</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <div class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue">
+                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+              </div>
+              <span class="text-slate-700 font-medium"><strong class="text-slate-900">Sin Dolor ni Estrés:</strong> Especialistas en pacientes con fobia o ansiedad dental.</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <div class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue">
+                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+              </div>
+              <span class="text-slate-700 font-medium"><strong class="text-slate-900">Materiales Bio-compatibles:</strong> Cuidamos tu cuerpo seleccionando materiales de primera calidad.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Callout block -->
+        <div class="lg:col-span-6 bg-brand-bluelight rounded-3xl p-8 lg:p-12 relative overflow-hidden reveal-item delay-200">
+          <div class="absolute -right-8 -bottom-8 w-40 h-40 rounded-full bg-white/30 blur-2xl"></div>
+          <div class="relative space-y-6">
+            <div class="inline-flex p-3 bg-brand-blue/10 text-brand-blue rounded-2xl">
+              <i data-lucide="heart" class="w-8 h-8"></i>
+            </div>
+            <p class="text-xl italic font-medium text-slate-800 leading-relaxed">
+              "Nuestra mayor satisfacción no es solo realizar un tratamiento impecable, sino ver cómo un paciente vuelve a sonreír con total confianza y tranquilidad desde que cruza la puerta."
+            </p>
+            <div>
+              <p class="font-heading font-bold text-slate-900 text-lg">Dra. Ana Gómez</p>
+              <p class="text-sm font-semibold text-brand-blue">Directora Médica & Fundadora</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Team Members Grid -->
+      <div class="reveal-item">
+        <h4 class="font-heading font-extrabold text-2xl text-center text-slate-900 mb-12">Nuestros Especialistas</h4>
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          
+          <!-- Doctor 1 Card -->
+          <div class="group bg-brand-bg rounded-3xl border border-slate-100 overflow-hidden hover:shadow-xl hover:border-brand-gold/30 transition-all duration-300">
+            <div class="relative overflow-hidden aspect-[4/3]">
+              <img src="assets/doctor_ana.png" alt="Dra. Ana Gómez" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-brand-blue border border-brand-blue/10">
+                Colegiada Nº 28001234
+              </div>
+            </div>
+            <div class="p-8 space-y-4">
+              <div>
+                <h5 class="font-heading font-extrabold text-xl text-slate-900">Dra. Ana Gómez</h5>
+                <p class="text-sm font-semibold text-brand-blue">Odontología Conservadora & Estética Dental</p>
+              </div>
+              <p class="text-sm text-slate-600">
+                Especialista en ortodoncia invisible y diseño estético de sonrisas. Su prioridad es conseguir resultados naturales y armónicos con técnicas mínimamente invasivas.
+              </p>
+              <div class="flex items-center space-x-3 pt-2 text-slate-400 border-t border-slate-200/50">
+                <span class="text-xs font-semibold uppercase tracking-wider text-slate-500">Especialidades:</span>
+                <span class="text-xs bg-white px-2.5 py-1 rounded-full border border-slate-200 text-slate-700 font-medium">Estética</span>
+                <span class="text-xs bg-white px-2.5 py-1 rounded-full border border-slate-200 text-slate-700 font-medium">Invisalign</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Doctor 2 Card -->
+          <div class="group bg-brand-bg rounded-3xl border border-slate-100 overflow-hidden hover:shadow-xl hover:border-brand-gold/30 transition-all duration-300">
+            <div class="relative overflow-hidden aspect-[4/3]">
+              <img src="assets/doctor_luis.png" alt="Dr. Luis Moreno" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-brand-blue border border-brand-blue/10">
+                Colegiado Nº 28005678
+              </div>
+            </div>
+            <div class="p-8 space-y-4">
+              <div>
+                <h5 class="font-heading font-extrabold text-xl text-slate-900">Dr. Luis Moreno</h5>
+                <p class="text-sm font-semibold text-brand-blue">Cirugía Oral, Implantología & Periodoncia</p>
+              </div>
+              <p class="text-sm text-slate-600">
+                Experto en colocación de implantes inmediatos y regeneración ósea avanzada. Combina su destreza técnica con un trato empático que disipa los miedos a la cirugía.
+              </p>
+              <div class="flex items-center space-x-3 pt-2 text-slate-400 border-t border-slate-200/50">
+                <span class="text-xs font-semibold uppercase tracking-wider text-slate-500">Especialidades:</span>
+                <span class="text-xs bg-white px-2.5 py-1 rounded-full border border-slate-200 text-slate-700 font-medium">Implantes</span>
+                <span class="text-xs bg-white px-2.5 py-1 rounded-full border border-slate-200 text-slate-700 font-medium">Cirugía 3D</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 4. SERVICIOS / TRATAMIENTOS ==================== -->
+  <section id="servicios" class="py-24 bg-brand-bg relative">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-20 reveal-item">
+        <h2 class="text-xs font-bold text-brand-blue tracking-widest uppercase mb-3">Qué hacemos por ti</h2>
+        <p class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 leading-tight">
+          Nuestros Tratamientos Odontológicos
+        </p>
+        <p class="text-slate-600 mt-4 text-base">
+          Cuidamos de tu boca en todas las etapas de tu vida. Diseñamos soluciones personalizadas utilizando materiales de calidad excelente y tecnologías avanzadas.
+        </p>
+      </div>
+
+      <!-- Services Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Card 1: Odontología -->
+        <div class="service-card group bg-white rounded-3xl p-8 border border-slate-100 flex flex-col justify-between reveal-item">
+          <div class="space-y-6">
+            <div class="service-icon w-12 h-12 rounded-2xl bg-brand-bluelight text-brand-blue flex items-center justify-center transition-all duration-300">
+              <i data-lucide="stethoscope" class="w-6 h-6"></i>
+            </div>
+            <div class="space-y-3">
+              <h3 class="font-heading font-extrabold text-xl text-slate-900">Odontología</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Tratamientos preventivos y conservadores como empastes de composite, endodoncias de precisión y cuidado periodontal para mantener tus dientes sanos.
+              </p>
+            </div>
+          </div>
+          <a href="odontologia-general.html" class="pt-6 border-t border-slate-100 mt-6 flex items-center justify-between text-xs font-bold text-brand-blue group-hover:text-brand-gold transition-colors">
+            <span>Saber más sobre Odontología</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+          </a>
+        </div>
+
+        <!-- Card 2: Implantología -->
+        <div class="service-card group bg-white rounded-3xl p-8 border border-slate-100 flex flex-col justify-between reveal-item delay-100">
+          <div class="space-y-6">
+            <div class="service-icon w-12 h-12 rounded-2xl bg-brand-bluelight text-brand-blue flex items-center justify-center transition-all duration-300">
+              <i data-lucide="crown" class="w-6 h-6"></i>
+            </div>
+            <div class="space-y-3">
+              <h3 class="font-heading font-extrabold text-xl text-slate-900">Implantología</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Recupera la estética y función masticatoria con implantes de carga inmediata en el mismo día, All-on-4, All-on-6 y cirugía guiada 3D.
+              </p>
+            </div>
+          </div>
+          <a href="implantologia.html" class="pt-6 border-t border-slate-100 mt-6 flex items-center justify-between text-xs font-bold text-brand-blue group-hover:text-brand-gold transition-colors">
+            <span>Saber más sobre Implantes</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+          </a>
+        </div>
+
+        <!-- Card 3: Ortodoncia -->
+        <div class="service-card group bg-white rounded-3xl p-8 border border-slate-100 flex flex-col justify-between reveal-item delay-200">
+          <div class="space-y-6">
+            <div class="service-icon w-12 h-12 rounded-2xl bg-brand-bluelight text-brand-blue flex items-center justify-center transition-all duration-300">
+              <i data-lucide="grid" class="w-6 h-6"></i>
+            </div>
+            <div class="space-y-3">
+              <h3 class="font-heading font-extrabold text-xl text-slate-900">Ortodoncia (Invisalign)</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Alineamos tu sonrisa con el sistema invisible Invisalign (Diamond Provider), brackets autoligables Damon o brackets estéticos tradicionales.
+              </p>
+            </div>
+          </div>
+          <a href="ortodoncia.html" class="pt-6 border-t border-slate-100 mt-6 flex items-center justify-between text-xs font-bold text-brand-blue group-hover:text-brand-gold transition-colors">
+            <span>Saber más sobre Ortodoncia</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+          </a>
+        </div>
+
+        <!-- Card 4: Digital Smile Design -->
+        <div class="service-card group bg-white rounded-3xl p-8 border border-slate-100 flex flex-col justify-between reveal-item">
+          <div class="space-y-6">
+            <div class="service-icon w-12 h-12 rounded-2xl bg-brand-bluelight text-brand-blue flex items-center justify-center transition-all duration-300">
+              <i data-lucide="monitor" class="w-6 h-6"></i>
+            </div>
+            <div class="space-y-3">
+              <h3 class="font-heading font-extrabold text-xl text-slate-900">Digital Smile Design</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Diseñamos tu sonrisa ideal en 3D antes de empezar, evaluando tus rasgos faciales para garantizar armonía estética y naturalidad.
+              </p>
+            </div>
+          </div>
+          <a href="estetica-dental.html#dsd" class="pt-6 border-t border-slate-100 mt-6 flex items-center justify-between text-xs font-bold text-brand-blue group-hover:text-brand-gold transition-colors">
+            <span>Saber más sobre DSD</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+          </a>
+        </div>
+
+        <!-- Card 5: Odontopediatría -->
+        <div class="service-card group bg-white rounded-3xl p-8 border border-slate-100 flex flex-col justify-between reveal-item delay-100">
+          <div class="space-y-6">
+            <div class="service-icon w-12 h-12 rounded-2xl bg-brand-bluelight text-brand-blue flex items-center justify-center transition-all duration-300">
+              <i data-lucide="baby" class="w-6 h-6"></i>
+            </div>
+            <div class="space-y-3">
+              <h3 class="font-heading font-extrabold text-xl text-slate-900">Odontopediatría</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Prevención y tratamientos para los más pequeños en un entorno lúdico, empático y adaptado para que su visita al dentista sea divertida.
+              </p>
+            </div>
+          </div>
+          <a href="odontopediatria.html" class="pt-6 border-t border-slate-100 mt-6 flex items-center justify-between text-xs font-bold text-brand-blue group-hover:text-brand-gold transition-colors">
+            <span>Saber más sobre Odontopediatría</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+          </a>
+        </div>
+
+        <!-- Card 6: Blanqueamiento Dental -->
+        <div class="service-card group bg-white rounded-3xl p-8 border border-slate-100 flex flex-col justify-between reveal-item delay-200">
+          <div class="space-y-6">
+            <div class="service-icon w-12 h-12 rounded-2xl bg-brand-bluelight text-brand-blue flex items-center justify-center transition-all duration-300">
+              <i data-lucide="sun" class="w-6 h-6"></i>
+            </div>
+            <div class="space-y-3">
+              <h3 class="font-heading font-extrabold text-xl text-slate-900">Blanqueamiento dental</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Aclara varios tonos el color de tus dientes de forma rápida y segura con nuestro sistema LED clínico de alta potencia y geles protectores.
+              </p>
+            </div>
+          </div>
+          <a href="estetica-dental.html#blanqueamiento" class="pt-6 border-t border-slate-100 mt-6 flex items-center justify-between text-xs font-bold text-brand-blue group-hover:text-brand-gold transition-colors">
+            <span>Saber más sobre Blanqueamiento</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+          </a>
+        </div>
+
+        <!-- Card 7: Carillas -->
+        <div class="service-card group bg-white rounded-3xl p-8 border border-slate-100 flex flex-col justify-between reveal-item">
+          <div class="space-y-6">
+            <div class="service-icon w-12 h-12 rounded-2xl bg-brand-bluelight text-brand-blue flex items-center justify-center transition-all duration-300">
+              <i data-lucide="layers" class="w-6 h-6"></i>
+            </div>
+            <div class="space-y-3">
+              <h3 class="font-heading font-extrabold text-xl text-slate-900">Carillas</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Corrección de imperfecciones de forma, color y posición en solo dos citas gracias al sistema ultrafino de carillas First Fit.
+              </p>
+            </div>
+          </div>
+          <a href="estetica-dental.html#carillas" class="pt-6 border-t border-slate-100 mt-6 flex items-center justify-between text-xs font-bold text-brand-blue group-hover:text-brand-gold transition-colors">
+            <span>Saber más sobre Carillas</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+          </a>
+        </div>
+
+        <!-- Card 8: Joya Dental -->
+        <div class="service-card group bg-white rounded-3xl p-8 border border-slate-100 flex flex-col justify-between reveal-item delay-100">
+          <div class="space-y-6">
+            <div class="service-icon w-12 h-12 rounded-2xl bg-brand-bluelight text-brand-blue flex items-center justify-center transition-all duration-300">
+              <i data-lucide="gem" class="w-6 h-6"></i>
+            </div>
+            <div class="space-y-3">
+              <h3 class="font-heading font-extrabold text-xl text-slate-900">Joya Dental</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Embellece tu sonrisa con un brillante de cristal o figura de oro certificado, colocado de forma adhesiva y sin dañar tu esmalte.
+              </p>
+            </div>
+          </div>
+          <a href="estetica-dental.html#joya-dental" class="pt-6 border-t border-slate-100 mt-6 flex items-center justify-between text-xs font-bold text-brand-blue group-hover:text-brand-gold transition-colors">
+            <span>Saber más sobre Joyas Dentales</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 4.1 FINANCIACIÓN ==================== -->
+  <section id="financiacion" class="py-20 bg-white relative overflow-hidden border-t border-slate-100">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Content: Title and Text -->
+        <div class="lg:col-span-6 space-y-6 reveal-item">
+          <h2 class="text-xs font-bold text-brand-blue tracking-widest uppercase">Facilidades para ti</h2>
+          <h3 class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 leading-tight">
+            Financiación a tu medida y sin intereses
+          </h3>
+          <p class="text-slate-600">
+            Queremos que la salud de tu boca sea tu única prioridad. Por eso, en Clínica Dental Ulident ofrecemos planes de financiación flexibles y personalizados para adaptarnos a las necesidades de cada familia.
+          </p>
+          
+          <div class="grid sm:grid-cols-2 gap-6 pt-4">
+            <div class="flex items-start space-x-3">
+              <div class="p-2 bg-brand-bluelight text-brand-blue rounded-xl flex-shrink-0">
+                <i data-lucide="percent" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="font-heading font-bold text-slate-800 text-sm">Hasta 24 meses sin intereses</h4>
+                <p class="text-xs text-slate-500 mt-1">Financia tu tratamiento al 0% TAE sin comisiones ocultas.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-3">
+              <div class="p-2 bg-brand-bluelight text-brand-blue rounded-xl flex-shrink-0">
+                <i data-lucide="file-text" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="font-heading font-bold text-slate-800 text-sm">Trámite rápido y sencillo</h4>
+                <p class="text-xs text-slate-500 mt-1">Solo necesitamos tu DNI, última nómina y un recibo bancario.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-3">
+              <div class="p-2 bg-brand-bluelight text-brand-blue rounded-xl flex-shrink-0">
+                <i data-lucide="credit-card" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="font-heading font-bold text-slate-800 text-sm">Cuotas desde 30€/mes</h4>
+                <p class="text-xs text-slate-500 mt-1">Elige la cuota mensual que mejor se adapte a tu economía.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-3">
+              <div class="p-2 bg-brand-bluelight text-brand-blue rounded-xl flex-shrink-0">
+                <i data-lucide="sparkles" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="font-heading font-bold text-slate-800 text-sm">Aprobación en 24 horas</h4>
+                <p class="text-xs text-slate-500 mt-1">Gestionamos todo en la clínica para darte respuesta al día siguiente.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right Content: Info Card -->
+        <div class="lg:col-span-6 reveal-item delay-200">
+          <div class="bg-brand-bluelight/60 rounded-3xl p-8 lg:p-10 border border-brand-blue/10 space-y-6">
+            <h4 class="font-heading font-bold text-xl text-slate-900">¿Cómo funciona la financiación?</h4>
+            
+            <!-- Steps timeline -->
+            <div class="space-y-6">
+              <div class="flex items-start space-x-4">
+                <div class="w-8 h-8 rounded-full bg-brand-blue text-white flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
+                <div>
+                  <h5 class="font-heading font-semibold text-slate-800 text-sm">Diagnóstico y Plan de Tratamiento</h5>
+                  <p class="text-xs text-slate-600 mt-1">En tu primera visita gratuita realizamos el diagnóstico y te entregamos un presupuesto cerrado.</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <div class="w-8 h-8 rounded-full bg-brand-blue text-white flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
+                <div>
+                  <h5 class="font-heading font-semibold text-slate-800 text-sm">Asesoramiento de Pago</h5>
+                  <p class="text-xs text-slate-600 mt-1">Nuestro asesor te explicará las diferentes opciones y calculará las cuotas según los meses que elijas.</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <div class="w-8 h-8 rounded-full bg-brand-blue text-white flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
+                <div>
+                  <h5 class="font-heading font-semibold text-slate-800 text-sm">Firma y Activación</h5>
+                  <p class="text-xs text-slate-600 mt-1">Una vez aprobado, firmamos el acuerdo en la clínica o de forma online y comenzamos con tu tratamiento.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="pt-4 border-t border-slate-200">
+              <a href="#reserva" class="btn-blue-glow block text-center bg-brand-blue text-white py-3 rounded-full font-bold shadow-md hover:bg-brand-bluedark transition-colors">
+                Calcular mi plan de pago
+              </a>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ==================== 5. TESTIMONIOS / CASOS DE ÉXITO ==================== -->
+  <section id="testimonios" class="py-24 bg-white relative overflow-hidden">
+    
+    <!-- Background Decor -->
+    <div class="absolute right-0 top-0 w-80 h-80 rounded-full bg-brand-bluelight/40 blur-3xl -z-10"></div>
+    <div class="absolute left-1/4 bottom-0 w-80 h-80 rounded-full bg-brand-goldlight/30 blur-3xl -z-10"></div>
+
+    <div class="max-w-5xl mx-auto px-6 lg:px-12">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16 reveal-item">
+        <h2 class="text-xs font-bold text-brand-blue tracking-widest uppercase mb-3">La voz de nuestros pacientes</h2>
+        <p class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 leading-tight">
+          Nuestra mejor recomendación es tu bienestar
+        </p>
+      </div>
+
+      <!-- Testimonial Carousel Wrapper -->
+      <div class="relative bg-brand-bg rounded-3xl p-8 md:p-16 border border-slate-100 shadow-xl overflow-hidden reveal-item">
+        
+        <!-- Large Quote Icon -->
+        <div class="absolute top-6 left-6 md:top-12 md:left-12 text-brand-blue/10">
+          <i data-lucide="quote" class="w-16 h-16 md:w-24 md:h-24"></i>
+        </div>
+
+        <div class="relative w-full overflow-hidden">
+          <!-- Track containing slides -->
+          <div class="carousel-track">
+            
+            <!-- Slide 1 -->
+            <div class="w-full flex-shrink-0 px-4 md:px-8 space-y-6">
+              <div class="flex text-brand-gold">
+                <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                <i data-lucide="star" class="fill-current w-5 h-5"></i>
+              </div>
+              <p class="text-lg md:text-xl text-slate-700 leading-relaxed font-medium">
+                "Siempre he tenido pánico al dentista, pero en Ulident el trato de la Dra. Ana Gómez fue increíblemente paciente y cariñoso. No sentí absolutamente nada de dolor durante mi endodoncia. Recomiendo la clínica al 100% por su empatía y limpieza."
+              </p>
+              <div>
+                <p class="font-heading font-extrabold text-slate-900">Marta Santillana</p>
+                <p class="text-sm font-semibold text-slate-500">Tratamiento: Endodoncia y Corona Estética</p>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="w-full flex-shrink-0 px-4 md:px-8 space-y-6">
+              <div class="flex text-brand-gold">
+                <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                <i data-lucide="star" class="fill-current w-5 h-5"></i>
+              </div>
+              <p class="text-lg md:text-xl text-slate-700 leading-relaxed font-medium">
+                "Llevé a mi hijo de 6 años para su primera revisión. Iba asustado, pero la odontopediatra lo trató como si fuera un juego. Salió encantado y preguntando cuándo volvemos. Da gusto encontrar profesionales con tanta vocación familiar."
+              </p>
+              <div>
+                <p class="font-heading font-extrabold text-slate-900">Javier Ruiz</p>
+                <p class="text-sm font-semibold text-slate-500">Tratamiento: Odontopediatría Familiar</p>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="w-full flex-shrink-0 px-4 md:px-8 space-y-6">
+              <div class="flex text-brand-gold">
+                <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                <i data-lucide="star" class="fill-current w-5 h-5"></i>
+              </div>
+              <p class="text-lg md:text-xl text-slate-700 leading-relaxed font-medium">
+                "Me realicé un implante completo con el Dr. Luis Moreno. El escáner 3D y la planificación guiada me dieron mucha seguridad. El proceso fue rápido y la recuperación indolora. Además, las instalaciones son preciosas y muy modernas."
+              </p>
+              <div>
+                <p class="font-heading font-extrabold text-slate-900">Beatriz Menéndez</p>
+                <p class="text-sm font-semibold text-slate-500">Tratamiento: Implante dental 3D</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Carousel Navigation Controls -->
+        <div class="flex justify-between items-center mt-12 pt-6 border-t border-slate-200/50">
+          <!-- Dots indicators -->
+          <div id="carousel-dots" class="flex space-x-2">
+            <!-- Rendered by JS dynamically -->
+          </div>
+          
+          <!-- Prev/Next buttons -->
+          <div class="flex space-x-3">
+            <button id="carousel-prev" class="w-10 h-10 rounded-full border border-slate-200 hover:border-brand-blue hover:text-brand-blue bg-white flex items-center justify-center text-slate-500 transition-colors shadow-sm" aria-label="Reseña anterior">
+              <i data-lucide="arrow-left" class="w-5 h-5"></i>
+            </button>
+            <button id="carousel-next" class="w-10 h-10 rounded-full border border-slate-200 hover:border-brand-blue hover:text-brand-blue bg-white flex items-center justify-center text-slate-500 transition-colors shadow-sm" aria-label="Reseña siguiente">
+              <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 6. AGENDA DE CITAS (CAL.COM EMBED) ==================== -->
+  <section id="reserva" class="py-24 bg-brand-bg relative">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal-item">
+        <h2 class="text-xs font-bold text-brand-blue tracking-widest uppercase mb-3">Agenda con nosotros</h2>
+        <p class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 leading-tight">
+          Elige el día y hora que mejor te convenga
+        </p>
+        <p class="text-slate-600 mt-4 text-base">
+          Utiliza nuestra agenda interactiva en tiempo real para reservar tu consulta. Recibirás una confirmación inmediata por correo electrónico.
+        </p>
+      </div>
+
+      <!-- Booking Container (Adaptable, Centered, Styled) -->
+      <div class="reveal-item">
+        <div class="w-full max-w-4xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100 min-h-[600px] relative p-2 md:p-6">
+          
+          <!-- Cal.com Embed Container -->
+          <div id="my-cal-inline" class="w-full h-full min-h-[580px] overflow-auto">
+            <!-- Loading Indicator -->
+            <div class="absolute inset-0 flex flex-col items-center justify-center bg-white space-y-4 z-10 transition-opacity duration-300" id="cal-loader">
+              <div class="w-12 h-12 border-4 border-brand-blue/20 border-t-brand-blue rounded-full animate-spin"></div>
+              <p class="text-slate-500 text-sm font-semibold">Cargando agenda online...</p>
+            </div>
+            
+            <!-- FALLBACK IFRAME (Loads if JS SDK is slow) -->
+            <!-- Note to Developer/Client: Change the src value to your Cal.com booking link -->
+            <iframe src="https://cal.com/alice/30min?embed=true" class="w-full h-full min-h-[580px] border-0" id="cal-iframe" style="display:none;" onload="document.getElementById('cal-loader').style.display='none'; this.style.display='block';"></iframe>
+          </div>
+
+        </div>
+        
+        <p class="text-center text-xs text-slate-500 mt-6 max-w-md mx-auto">
+          ¿Prefieres reservar por teléfono? Llámanos directamente al <a href="tel:+34910248447" class="text-brand-blue font-bold hover:underline">910 248 447</a> o envíanos un WhatsApp.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 7. CONTACTO Y FOOTER ==================== -->
+  <section id="contacto" class="relative pt-24 bg-brand-dark text-slate-300">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 pb-16">
+      <div class="grid lg:grid-cols-12 gap-12">
+        
+        <!-- Contact Information (5 columns) -->
+        <div class="lg:col-span-5 space-y-8">
+          <div class="space-y-4">
+            <a href="index.html" class="flex items-center space-x-3 group">
+              <div class="w-10 h-10 rounded-full bg-brand-blue flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300">
+                <i data-lucide="sparkles" class="text-white w-5 h-5"></i>
+              </div>
+              <span class="font-heading font-extrabold text-xl tracking-tight text-white">
+                Ulident<span class="text-brand-blue">.</span>
+              </span>
+            </a>
+            <p class="text-slate-400 text-sm max-w-sm">
+              Clínica dental con trato humano y tecnología de última generación en el corazón de la ciudad. Tu salud dental en manos de confianza.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            
+            <!-- Contact Row: Address -->
+            <div class="flex items-start space-x-4">
+              <div class="p-3 bg-white/5 rounded-xl text-brand-gold border border-white/10 flex-shrink-0">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-xs text-slate-500 font-semibold uppercase tracking-wider">Dirección</p>
+                <p class="text-sm font-semibold text-white mt-0.5">Avenida del Marqués de Corbera, 14, 28017 Madrid</p>
+                <a href="https://maps.google.com/?q=Avenida+del+Marques+de+Corbera+14+28017+Madrid" target="_blank" rel="noopener noreferrer" class="text-xs text-brand-blue font-bold hover:underline mt-1 block">¿Cómo llegar?</a>
+              </div>
+            </div>
+
+            <!-- Contact Row: Phone -->
+            <div class="flex items-start space-x-4">
+              <div class="p-3 bg-white/5 rounded-xl text-brand-gold border border-white/10 flex-shrink-0">
+                <i data-lucide="phone" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-xs text-slate-500 font-semibold uppercase tracking-wider">Teléfono / WhatsApp</p>
+                <p class="text-sm font-semibold text-white mt-0.5"><a href="tel:+34910248447" class="hover:text-brand-blue transition-colors">910 248 447</a></p>
+                <p class="text-xs text-slate-400">Atención rápida para urgencias dentales</p>
+              </div>
+            </div>
+
+            <!-- Contact Row: Email -->
+            <div class="flex items-start space-x-4">
+              <div class="p-3 bg-white/5 rounded-xl text-brand-gold border border-white/10 flex-shrink-0">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-xs text-slate-500 font-semibold uppercase tracking-wider">Email</p>
+                <p class="text-sm font-semibold text-white mt-0.5"><a href="mailto:sonrie@clinicaulident.com" class="hover:text-brand-blue transition-colors">sonrie@clinicaulident.com</a></p>
+              </div>
+            </div>
+
+            <!-- Contact Row: Hours -->
+            <div class="flex items-start space-x-4">
+              <div class="p-3 bg-white/5 rounded-xl text-brand-gold border border-white/10 flex-shrink-0">
+                <i data-lucide="clock" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-xs text-slate-500 font-semibold uppercase tracking-wider">Horario de Atención</p>
+                <p class="text-sm font-semibold text-white mt-0.5">Lunes a Viernes: 10:00 - 14:00 y 16:00 - 20:00</p>
+                <p class="text-xs text-slate-400">Sábados y Domingos: Cerrado</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Google Map Section (7 columns) -->
+        <div class="lg:col-span-7 flex flex-col h-full space-y-6">
+          <h4 class="font-heading font-extrabold text-lg text-white">Nuestra Ubicación</h4>
+          <div class="w-full h-80 rounded-2xl overflow-hidden border border-white/10 relative shadow-2xl">
+            <!-- Simulated Google Map Iframe for presentation -->
+            <!-- Clean gray filter applied to maps iframe inside stylesheet if desired, or left clean -->
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.491295988188!2d-3.6558156241315875!3d40.42236895562772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42289656885c3f%3A0x8e8334863378b88d!2sAv.%20del%20Marqu%C3%A9s%20de%20Corbera%2C%2014%2C%2028017%20Madrid%2C%20Spain!5e0!3m2!1sen!2ses!4v1720519200000!5m2!1sen!2ses" 
+              class="w-full h-full border-0 absolute inset-0 filter grayscale invert contrast-[0.9]" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade" 
+              title="Mapa de ubicación de la clínica"
+            ></iframe>
+          </div>
+          
+          <!-- Social Icons and Quick Links -->
+          <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-white/10">
+            <div class="flex space-x-6 text-sm">
+              <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
+              <a href="nosotros.html" class="hover:text-white transition-colors">Nosotros</a>
+              <a href="index.html#servicios" class="hover:text-white transition-colors">Tratamientos</a>
+              <a href="index.html#financiacion" class="hover:text-white transition-colors">Financiación</a>
+              <a href="contacto.html" class="hover:text-white transition-colors">Contacto</a>
+            </div>
+            
+            <div class="flex space-x-4">
+              <a href="#" class="w-10 h-10 rounded-full bg-white/5 hover:bg-brand-blue hover:text-white flex items-center justify-center transition-colors border border-white/10" aria-label="Facebook">
+                <i data-lucide="facebook" class="w-5 h-5"></i>
+              </a>
+              <a href="#" class="w-10 h-10 rounded-full bg-white/5 hover:bg-brand-blue hover:text-white flex items-center justify-center transition-colors border border-white/10" aria-label="Instagram">
+                <i data-lucide="instagram" class="w-5 h-5"></i>
+              </a>
+              <a href="#" class="w-10 h-10 rounded-full bg-white/5 hover:bg-brand-blue hover:text-white flex items-center justify-center transition-colors border border-white/10" aria-label="Twitter">
+                <i data-lucide="twitter" class="w-5 h-5"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      
+      <!-- Copyright Divider -->
+      <div class="mt-16 pt-8 border-t border-white/5 text-center text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p>&copy; 2026 Clínica Dental Ulident. Todos los derechos reservados.</p>
+        <div class="flex space-x-4">
+          <a href="aviso-legal.html" class="hover:underline">Aviso Legal</a>
+          <a href="politica-privacidad.html" class="hover:underline">Política de Privacidad</a>
+          <a href="politica-cookies.html" class="hover:underline">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== COOKIES CONSENT BANNER ==================== -->
+  <div id="cookies-banner" class="fixed bottom-6 left-6 right-6 md:left-auto md:right-6 md:max-w-md bg-slate-900/95 backdrop-blur-md text-white border border-white/10 p-6 rounded-3xl shadow-2xl z-50 transform translate-y-32 opacity-0 transition-all duration-500 pointer-events-none">
+    <div class="flex items-start space-x-4">
+      <div class="p-3 bg-brand-blue/20 text-brand-gold rounded-2xl border border-white/10 flex-shrink-0">
+        <i data-lucide="cookie" class="w-6 h-6"></i>
+      </div>
+      <div class="space-y-3">
+        <h4 class="font-heading font-extrabold text-sm text-white tracking-wide">¿Aceptas el uso de cookies?</h4>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          Utilizamos cookies propias y de terceros para personalizar tu experiencia, recordar tu cita previa y analizar el tráfico de forma anónima. Conoce más en nuestra <a href="politica-cookies.html" class="text-brand-gold hover:underline font-semibold">Política de Cookies</a>.
+        </p>
+      </div>
+    </div>
+    <div class="flex flex-col sm:flex-row gap-2 mt-5">
+      <button id="cookies-accept-all-btn" class="flex-1 px-4 py-2.5 bg-brand-blue hover:bg-brand-bluedark text-white rounded-xl text-xs font-bold transition-all shadow-md">
+        Aceptar todas
+      </button>
+      <button id="cookies-reject-essential-btn" class="flex-1 px-4 py-2.5 bg-white/5 hover:bg-white/10 text-slate-300 rounded-xl text-xs font-bold border border-white/10 transition-all">
+        Rechazar no esenciales
+      </button>
+      <button id="cookies-configure-btn" class="px-4 py-2.5 text-brand-gold hover:text-brand-goldhover text-xs font-bold transition-all underline">
+        Configurar
+      </button>
+    </div>
+  </div>
+
+  <!-- ==================== COOKIES CONFIGURATION MODAL ==================== -->
+  <div id="cookies-modal" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 flex items-center justify-center p-6 hidden opacity-0 transition-opacity duration-300">
+    <div class="bg-white text-slate-800 w-full max-w-lg rounded-3xl shadow-2xl border border-slate-100 overflow-hidden transform scale-95 transition-transform duration-300">
+      
+      <!-- Modal Header -->
+      <div class="bg-brand-bluelight p-6 border-b border-brand-blue/10 flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 bg-brand-blue/15 text-brand-blue rounded-xl flex items-center justify-center">
+            <i data-lucide="settings" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="font-heading font-extrabold text-base text-slate-900 leading-tight">Configuración de Cookies</h3>
+            <p class="text-[10px] text-brand-blue font-bold uppercase tracking-wider mt-0.5">Clínica Dental Ulident</p>
+          </div>
+        </div>
+        <button id="cookies-modal-close-btn" class="text-slate-400 hover:text-slate-600 p-1.5 hover:bg-slate-200/50 rounded-xl transition-all">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-6 space-y-5 max-h-[60vh] overflow-y-auto">
+        <p class="text-xs text-slate-500 leading-relaxed">
+          Puedes personalizar tus preferencias sobre el almacenamiento de cookies en tu navegador. Activa o desactiva las categorías según consideres necesario:
+        </p>
+
+        <!-- Toggle Row: Essential -->
+        <div class="flex items-start justify-between p-4 bg-slate-50 rounded-2xl border border-slate-100">
+          <div class="space-y-1 pr-4">
+            <div class="flex items-center space-x-2">
+              <span class="text-xs font-bold text-slate-900">Cookies Técnicas / Esenciales</span>
+              <span class="px-2 py-0.5 bg-slate-200 text-slate-600 rounded text-[9px] font-semibold uppercase">Siempre Activas</span>
+            </div>
+            <p class="text-[11px] text-slate-500 leading-relaxed">
+              Necesarias para el correcto funcionamiento del portal, guardar tus preferencias de consentimiento de cookies y permitir el widget de reserva de citas.
+            </p>
+          </div>
+          <!-- Toggle input disabled (cannot reject technical) -->
+          <div class="relative flex items-center select-none mt-1">
+            <input type="checkbox" checked disabled class="sr-only peer">
+            <div class="w-9 h-5 bg-blue-600 rounded-full peer peer-focus:ring-2 peer-focus:ring-blue-300 opacity-60"></div>
+            <div class="absolute left-[18px] top-[2px] bg-white w-4 h-4 rounded-full transition-all"></div>
+          </div>
+        </div>
+
+        <!-- Toggle Row: Analytics -->
+        <div class="flex items-start justify-between p-4 bg-slate-50 rounded-2xl border border-slate-100">
+          <div class="space-y-1 pr-4">
+            <h4 class="text-xs font-bold text-slate-900">Cookies Analíticas</h4>
+            <p class="text-[11px] text-slate-500 leading-relaxed">
+              Nos permiten medir el número de visitas, el comportamiento de navegación en la web y detectar posibles errores para mejorar continuamente nuestro portal.
+            </p>
+          </div>
+          <!-- Custom Toggle -->
+          <label class="relative inline-flex items-center cursor-pointer select-none mt-1">
+            <input type="checkbox" id="cookies-toggle-analytics" class="sr-only peer">
+            <div class="w-9 h-5 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-600"></div>
+          </label>
+        </div>
+
+        <!-- Toggle Row: Marketing -->
+        <div class="flex items-start justify-between p-4 bg-slate-50 rounded-2xl border border-slate-100">
+          <div class="space-y-1 pr-4">
+            <h4 class="text-xs font-bold text-slate-900">Cookies Publicitarias / Marketing</h4>
+            <p class="text-[11px] text-slate-500 leading-relaxed">
+              Utilizadas para rastrear la efectividad de nuestras campañas publicitarias en redes sociales y buscadores, y mostrar anuncios relevantes de Clínica Dental Ulident.
+            </p>
+          </div>
+          <!-- Custom Toggle -->
+          <label class="relative inline-flex items-center cursor-pointer select-none mt-1">
+            <input type="checkbox" id="cookies-toggle-marketing" class="sr-only peer">
+            <div class="w-9 h-5 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-600"></div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="bg-slate-50 p-6 border-t border-slate-100 flex flex-col sm:flex-row gap-3">
+        <button id="cookies-save-settings-btn" class="flex-1 px-5 py-3 bg-brand-blue hover:bg-brand-bluedark text-white rounded-xl text-xs font-bold transition-all shadow-md">
+          Guardar configuración
+        </button>
+        <button id="cookies-accept-all-modal-btn" class="flex-1 px-5 py-3 bg-slate-200 hover:bg-slate-300 text-slate-800 rounded-xl text-xs font-bold transition-all">
+          Permitir todas
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Core Javascript File -->
+  <script src="app.js"></script>
+</body>
+</html>

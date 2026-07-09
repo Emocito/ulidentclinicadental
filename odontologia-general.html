@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Odontología General y Conservadora | Clínica Dental Ulident</title>
+  <meta name="description" content="Tratamientos odontológicos preventivos y conservadores en Madrid. Empastes, endodoncias, periodoncia y férulas de descarga para bruxismo.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.clinicadentalulident.com/odontologia-general.html">
+  
+  <!-- Tailwind CSS CDN with configuration -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#0F52BA',
+              bluelight: '#F0F5FF',
+              bluedark: '#0A3D8A',
+              gold: '#D4AF37',
+              goldlight: '#FAF5E6',
+              goldhover: '#AA8C2C',
+              bg: '#FAFAFA',
+              dark: '#0F172A',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Montserrat', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-brand-bg text-slate-800 antialiased font-sans flex flex-col min-h-screen">
+
+  <!-- ==================== NAVBAR ==================== -->
+  <header class="fixed top-0 left-0 w-full z-50 glass-nav transition-all duration-300 py-5">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 flex justify-between items-center">
+      
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center space-x-3 group">
+        <svg viewBox="0 0 100 100" class="w-11 h-11 text-white fill-none stroke-white" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M50,80 C22,58 10,40 10,26 C10,14 19,8 29,8 C37,8 44,13 50,18 C56,13 63,8 71,8 C81,8 90,14 90,26 C90,40 78,58 50,80 Z" />
+          <path d="M50,18 L73,41 L50,64 L27,41 Z" />
+        </svg>
+        <div class="flex flex-col">
+          <span class="font-heading font-extrabold text-2xl tracking-wide text-white leading-none">ULIDENT</span>
+          <span class="text-[7.5px] uppercase tracking-[0.2em] text-white/80 font-semibold mt-1">PERFECT & NATURAL SMILE</span>
+        </div>
+      </a>
+
+      <!-- Desktop Menu Links -->
+      <nav class="hidden lg:flex space-x-6 items-center">
+        <!-- Tratamientos with Dropdown -->
+        <div class="relative group">
+          <a href="index.html#servicios" class="nav-link text-sm font-semibold text-white/90 hover:text-brand-gold flex items-center space-x-1 py-2 transition-colors">
+            <span>Tratamientos</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+          </a>
+          <!-- Dropdown Menu -->
+          <div class="absolute top-full left-0 mt-2 w-[550px] bg-white rounded-3xl shadow-2xl border border-slate-100 p-6 hidden group-hover:block transition-all duration-300 z-50">
+            <div class="grid grid-cols-2 gap-4">
+              <!-- Left Column -->
+              <div class="space-y-2">
+                <a href="odontologia-general.html" class="flex items-center space-x-3 p-3 rounded-2xl hover:bg-brand-bluelight/70 transition-colors group/item">
+                  <div class="w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue flex items-center justify-center flex-shrink-0 group-hover/item:bg-brand-blue group-hover/item:text-white transition-colors">
+                    <i data-lucide="stethoscope" class="w-5 h-5"></i>
+                  </div>
+                  <span class="text-sm font-semibold text-slate-800 group-hover/item:text-brand-blue transition-colors text-brand-gold font-bold">Odontología</span>
+                </a>
+                <a href="implantologia.html" class="flex items-center space-x-3 p-3 rounded-2xl hover:bg-brand-bluelight/70 transition-colors group/item">
+                  <div class="w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue flex items-center justify-center flex-shrink-0 group-hover/item:bg-brand-blue group-hover/item:text-white transition-colors">
+                    <i data-lucide="crown" class="w-5 h-5"></i>
+                  </div>
+                  <span class="text-sm font-semibold text-slate-800 group-hover/item:text-brand-blue transition-colors">Implantología</span>
+                </a>
+                <a href="ortodoncia.html" class="flex items-center space-x-3 p-3 rounded-2xl hover:bg-brand-bluelight/70 transition-colors group/item">
+                  <div class="w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue flex items-center justify-center flex-shrink-0 group-hover/item:bg-brand-blue group-hover/item:text-white transition-colors">
+                    <i data-lucide="grid" class="w-5 h-5"></i>
+                  </div>
+                  <span class="text-sm font-semibold text-slate-800 group-hover/item:text-brand-blue transition-colors">Ortodoncia</span>
+                </a>
+                <a href="estetica-dental.html#dsd" class="flex items-center space-x-3 p-3 rounded-2xl hover:bg-brand-bluelight/70 transition-colors group/item">
+                  <div class="w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue flex items-center justify-center flex-shrink-0 group-hover/item:bg-brand-blue group-hover/item:text-white transition-colors">
+                    <i data-lucide="monitor" class="w-5 h-5"></i>
+                  </div>
+                  <span class="text-sm font-semibold text-slate-800 group-hover/item:text-brand-blue transition-colors">Digital Smile Design</span>
+                </a>
+              </div>
+              <!-- Right Column -->
+              <div class="space-y-2">
+                <a href="odontopediatria.html" class="flex items-center space-x-3 p-3 rounded-2xl hover:bg-brand-bluelight/70 transition-colors group/item">
+                  <div class="w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue flex items-center justify-center flex-shrink-0 group-hover/item:bg-brand-blue group-hover/item:text-white transition-colors">
+                    <i data-lucide="baby" class="w-5 h-5"></i>
+                  </div>
+                  <span class="text-sm font-semibold text-slate-800 group-hover/item:text-brand-blue transition-colors">Odontopediatría</span>
+                </a>
+                <a href="estetica-dental.html#blanqueamiento" class="flex items-center space-x-3 p-3 rounded-2xl hover:bg-brand-bluelight/70 transition-colors group/item">
+                  <div class="w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue flex items-center justify-center flex-shrink-0 group-hover/item:bg-brand-blue group-hover/item:text-white transition-colors">
+                    <i data-lucide="sun" class="w-5 h-5"></i>
+                  </div>
+                  <span class="text-sm font-semibold text-slate-800 group-hover/item:text-brand-blue transition-colors">Blanqueamiento dental</span>
+                </a>
+                <a href="estetica-dental.html#carillas" class="flex items-center space-x-3 p-3 rounded-2xl hover:bg-brand-bluelight/70 transition-colors group/item">
+                  <div class="w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue flex items-center justify-center flex-shrink-0 group-hover/item:bg-brand-blue group-hover/item:text-white transition-colors">
+                    <i data-lucide="layers" class="w-5 h-5"></i>
+                  </div>
+                  <span class="text-sm font-semibold text-slate-800 group-hover/item:text-brand-blue transition-colors">Carillas</span>
+                </a>
+                <a href="estetica-dental.html#joya-dental" class="flex items-center space-x-3 p-3 rounded-2xl hover:bg-brand-bluelight/70 transition-colors group/item">
+                  <div class="w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue flex items-center justify-center flex-shrink-0 group-hover/item:bg-brand-blue group-hover/item:text-white transition-colors">
+                    <i data-lucide="gem" class="w-5 h-5"></i>
+                  </div>
+                  <span class="text-sm font-semibold text-slate-800 group-hover/item:text-brand-blue transition-colors">Joya Dental</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="nosotros.html" class="nav-link text-sm font-semibold text-white/90 hover:text-brand-gold transition-colors">Nosotros</a>
+        <a href="index.html#financiacion" class="nav-link text-sm font-semibold text-white/90 hover:text-brand-gold transition-colors">Financiación</a>
+        <a href="contacto.html" class="nav-link text-sm font-semibold text-white/90 hover:text-brand-gold transition-colors">Contacto</a>
+      </nav>
+
+      <!-- Desktop Action Button -->
+      <div class="hidden lg:block">
+        <a href="tel:+34910248447" class="px-5 py-2.5 rounded-lg text-sm font-bold text-[#0B3A70] hover:text-[#0A3363] bg-white hover:bg-slate-100 shadow-md hover:shadow-lg transition-all flex items-center space-x-2">
+          <i data-lucide="phone" class="w-4 h-4 text-[#0B3A70] fill-current"></i>
+          <span>Llamar 910 248 447</span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="lg:hidden p-2 text-white/90 focus:outline-none" aria-label="Abrir menú de navegación">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-slate-900/98 backdrop-blur-md absolute top-full left-0 w-full border-b border-white/10 shadow-xl py-6 px-6 z-50">
+      <nav class="flex flex-col space-y-4">
+        <div class="space-y-2">
+          <p class="text-xs uppercase tracking-wider text-slate-400 font-bold">Tratamientos</p>
+          <div class="grid grid-cols-2 gap-2 pl-2">
+            <a href="odontologia-general.html" class="text-sm font-semibold text-slate-200 hover:text-brand-gold py-1 text-brand-gold font-bold">Odontología</a>
+            <a href="odontopediatria.html" class="text-sm font-semibold text-slate-200 hover:text-brand-gold py-1">Odontopediatría</a>
+            <a href="implantologia.html" class="text-sm font-semibold text-slate-200 hover:text-brand-gold py-1">Implantología</a>
+            <a href="estetica-dental.html#blanqueamiento" class="text-sm font-semibold text-slate-200 hover:text-brand-gold py-1">Blanqueamiento</a>
+            <a href="ortodoncia.html" class="text-sm font-semibold text-slate-200 hover:text-brand-gold py-1">Ortodoncia</a>
+            <a href="estetica-dental.html#carillas" class="text-sm font-semibold text-slate-200 hover:text-brand-gold py-1">Carillas</a>
+            <a href="estetica-dental.html#dsd" class="text-sm font-semibold text-slate-200 hover:text-brand-gold py-1">Digital Smile Design</a>
+            <a href="estetica-dental.html#joya-dental" class="text-sm font-semibold text-slate-200 hover:text-brand-gold py-1">Joya Dental</a>
+          </div>
+        </div>
+        <hr class="border-white/10">
+        <a href="nosotros.html" class="text-base font-semibold text-white/90 hover:text-brand-gold transition-colors">Nosotros</a>
+        <a href="index.html#financiacion" class="text-base font-semibold text-white/90 hover:text-brand-gold transition-colors">Financiación</a>
+        <a href="contacto.html" class="text-base font-semibold text-white/90 hover:text-brand-gold transition-colors">Contacto</a>
+        <hr class="border-white/10">
+        <a href="tel:+34910248447" class="text-center py-3 rounded-lg text-base font-bold text-[#0B3A70] bg-white hover:bg-slate-100 transition-colors flex items-center justify-center space-x-2">
+          <i data-lucide="phone" class="w-4 h-4 fill-current"></i>
+          <span>Llamar 910 248 447</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECCIÓN ==================== -->
+  <section class="relative bg-gradient-to-b from-brand-blue to-brand-bluedark text-white pt-40 pb-20 overflow-hidden">
+    <div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-white/10 blur-3xl -z-10"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center space-y-6 relative z-10 reveal-item">
+      <!-- Breadcrumbs -->
+      <nav class="flex justify-center space-x-2 text-xs font-semibold text-white/70 uppercase tracking-widest">
+        <a href="index.html" class="hover:text-brand-gold transition-colors">Inicio</a>
+        <span>/</span>
+        <span class="text-brand-gold">Tratamientos</span>
+        <span>/</span>
+        <span class="text-brand-gold">Odontología</span>
+      </nav>
+      <h1 class="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-tight">
+        Odontología General & Preventiva
+      </h1>
+      <p class="text-lg text-slate-200 max-w-2xl mx-auto leading-relaxed">
+        Conservamos tu dentición natural y prevenimos patologías bucales mediante limpiezas avanzadas, empastes estéticos, endodoncias de precisión y protectores oclusales.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== CONTENIDOS DE ODONTOLOGÍA ==================== -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 space-y-20">
+      
+      <!-- Tratamiento 1: Limpiezas y Prevención -->
+      <div class="grid md:grid-cols-12 gap-8 items-center reveal-item">
+        <div class="md:col-span-4 bg-brand-bg p-6 rounded-3xl border border-slate-100 flex items-center justify-center">
+          <div class="text-center space-y-4">
+            <div class="w-16 h-16 rounded-full bg-brand-blue/10 text-brand-blue flex items-center justify-center mx-auto">
+              <i data-lucide="shield-check" class="w-8 h-8"></i>
+            </div>
+            <h3 class="font-heading font-bold text-slate-800 text-lg">Higiene & Prevención</h3>
+          </div>
+        </div>
+        <div class="md:col-span-8 space-y-3">
+          <h4 class="font-heading font-bold text-slate-900 text-xl">Profilaxis e Higiene Dental Avanzada</h4>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Una correcta higiene bucodental profesional cada 6 u 12 meses es el tratamiento preventivo número uno. Eliminamos el sarro calcificado y las bacterias acumuladas en el esmalte y bajo la línea de la encía utilizando ultrasonidos suaves, seguidos de un pulido aeropulidor con bicarbonato para eliminar manchas superficiales de café, té o tabaco. Adicionalmente, te asesoramos en tu técnica de cepillado diaria.
+          </p>
+        </div>
+      </div>
+
+      <!-- Tratamiento 2: Obturaciones Estéticas (Empastes) -->
+      <div class="grid md:grid-cols-12 gap-8 items-center reveal-item">
+        <div class="md:col-span-4 md:order-last bg-brand-bg p-6 rounded-3xl border border-slate-100 flex items-center justify-center">
+          <div class="text-center space-y-4">
+            <div class="w-16 h-16 rounded-full bg-brand-blue/10 text-brand-blue flex items-center justify-center mx-auto">
+              <i data-lucide="sparkles" class="w-8 h-8"></i>
+            </div>
+            <h3 class="font-heading font-bold text-slate-800 text-lg">Empastes Estéticos</h3>
+          </div>
+        </div>
+        <div class="md:col-span-8 space-y-3">
+          <h4 class="font-heading font-bold text-slate-900 text-xl">Curación de Caries con Composite</h4>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Si la caries ha dañado tu diente, eliminamos el tejido afectado de forma mínimamente invasiva y reconstruimos la pieza utilizando **composite de última generación**. Este material es libre de metal (amalgama gris), se adhiere directamente a las paredes dentales reforzando su estructura y permite seleccionar el tono exacto de tu esmalte para que el empaste sea completamente invisible y natural al hablar o sonreír.
+          </p>
+        </div>
+      </div>
+
+      <!-- Tratamiento 3: Endodoncia -->
+      <div class="grid md:grid-cols-12 gap-8 items-center reveal-item">
+        <div class="md:col-span-4 bg-brand-bg p-6 rounded-3xl border border-slate-100 flex items-center justify-center">
+          <div class="text-center space-y-4">
+            <div class="w-16 h-16 rounded-full bg-brand-blue/10 text-brand-blue flex items-center justify-center mx-auto">
+              <i data-lucide="activity" class="w-8 h-8"></i>
+            </div>
+            <h3 class="font-heading font-bold text-slate-800 text-lg">Endodoncia Rotatoria</h3>
+          </div>
+        </div>
+        <div class="md:col-span-8 space-y-3">
+          <h4 class="font-heading font-bold text-slate-900 text-xl">Salvar tu Diente: Endodoncia de Precisión</h4>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Cuando la caries es muy profunda o el diente ha sufrido un traumatismo severo, la infección alcanza la pulpa dental (el nervio), provocando un dolor intenso. Para evitar la extracción del diente, realizamos una **endodoncia**. Limpiamos, desinfectamos y sellamos herméticamente los conductos radiculares de forma digital y rotatoria, aliviando el dolor de inmediato y devolviendo la plena funcionalidad al diente.
+          </p>
+        </div>
+      </div>
+
+      <!-- Tratamiento 4: Periodoncia -->
+      <div class="grid md:grid-cols-12 gap-8 items-center reveal-item">
+        <div class="md:col-span-4 md:order-last bg-brand-bg p-6 rounded-3xl border border-slate-100 flex items-center justify-center">
+          <div class="text-center space-y-4">
+            <div class="w-16 h-16 rounded-full bg-brand-blue/10 text-brand-blue flex items-center justify-center mx-auto">
+              <i data-lucide="heart" class="w-8 h-8"></i>
+            </div>
+            <h3 class="font-heading font-bold text-slate-800 text-lg">Cuidado de Encías</h3>
+          </div>
+        </div>
+        <div class="md:col-span-8 space-y-3">
+          <h4 class="font-heading font-bold text-slate-900 text-xl">Periodoncia y Curetajes (Gingivitis y Periodontitis)</h4>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            El sangrado de encías y la movilidad dental son signos de enfermedad periodontal (piorrea). En su etapa inicial (gingivitis), la encía está inflamada pero es reversible. Si avanza a periodontitis, daña el hueso de soporte. Realizamos tratamientos periodontales de curetaje (raspado y alisado radicular) bajo anestesia para limpiar las bolsas de sarro bacteriano y devolver la firmeza y salud a tus encías.
+          </p>
+        </div>
+      </div>
+
+      <!-- Tratamiento 5: Férulas de descarga (Bruxismo) -->
+      <div class="grid md:grid-cols-12 gap-8 items-center reveal-item">
+        <div class="md:col-span-4 bg-brand-bg p-6 rounded-3xl border border-slate-100 flex items-center justify-center">
+          <div class="text-center space-y-4">
+            <div class="w-16 h-16 rounded-full bg-brand-blue/10 text-brand-blue flex items-center justify-center mx-auto">
+              <i data-lucide="smile" class="w-8 h-8"></i>
+            </div>
+            <h3 class="font-heading font-bold text-slate-800 text-lg">Férulas de Descarga</h3>
+          </div>
+        </div>
+        <div class="md:col-span-8 space-y-3">
+          <h4 class="font-heading font-bold text-slate-900 text-xl">Solución al Bruxismo: Férulas Michigan</h4>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Apretar o rechinar los dientes involuntariamente por las noches (bruxismo) provoca fisuras y desgastes dentales, dolores de cabeza al despertar y tensión en la articulación temporomandibular (ATM). Confeccionamos **férulas de descarga rígidas Michigan** personalizadas mediante modelos digitales de precisión. Actúan como un amortiguador, relajando la musculatura de tu mandíbula y protegiendo tu esmalte de la fricción.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== CALL TO ACTION ==================== -->
+  <section class="py-16 bg-brand-bluelight/70 border-t border-brand-blue/10">
+    <div class="max-w-4xl mx-auto px-6 text-center space-y-8 reveal-item">
+      <h3 class="font-heading font-extrabold text-2xl sm:text-3xl text-slate-900">
+        ¿Sientes molestias o necesitas una revisión general?
+      </h3>
+      <p class="text-slate-600 text-sm sm:text-base max-w-xl mx-auto">
+        Tu primera consulta de diagnóstico general incluye examen de caries con cámara intraoral y radiografía panorámica de control gratis.
+      </p>
+      <div class="flex justify-center">
+        <a href="index.html#reserva" class="btn-blue-glow bg-brand-blue text-white px-8 py-4 rounded-full font-bold shadow-lg hover:bg-brand-bluedark transition-all">
+          Reservar Revisión General Gratis
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-brand-dark text-slate-300 pt-16 mt-auto">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 pb-12 grid md:grid-cols-3 gap-8 border-b border-white/5">
+      <div class="space-y-4">
+        <a href="index.html" class="flex items-center space-x-3 group">
+          <svg viewBox="0 0 100 100" class="w-10 h-10 text-white fill-none stroke-white" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M50,80 C22,58 10,40 10,26 C10,14 19,8 29,8 C37,8 44,13 50,18 C56,13 63,8 71,8 C81,8 90,14 90,26 C90,40 78,58 50,80 Z" />
+            <path d="M50,18 L73,41 L50,64 L27,41 Z" />
+          </svg>
+          <span class="font-heading font-extrabold text-xl text-white">Ulident.</span>
+        </a>
+        <p class="text-slate-400 text-sm max-w-sm">
+          Clínica dental con trato humano y tecnología de última generación en el corazón de la ciudad. Tu salud dental en manos de confianza.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <h4 class="font-heading font-bold text-white text-sm uppercase tracking-wider">Enlaces Rápidos</h4>
+        <div class="grid grid-cols-2 gap-2 text-sm text-slate-400">
+          <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
+          <a href="nosotros.html" class="hover:text-white transition-colors">Nosotros</a>
+          <a href="index.html#servicios" class="hover:text-white transition-colors text-brand-gold font-semibold">Tratamientos</a>
+          <a href="index.html#financiacion" class="hover:text-white transition-colors">Financiación</a>
+          <a href="contacto.html" class="hover:text-white transition-colors">Contacto</a>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <h4 class="font-heading font-bold text-white text-sm uppercase tracking-wider">Contacto Oficial</h4>
+        <p class="text-slate-400 text-sm">Av. del Marqués de Corbera, 14, 28017 Madrid</p>
+        <p class="text-slate-400 text-sm">Teléfono: <a href="tel:+34910248447" class="hover:text-white">910 248 447</a></p>
+        <p class="text-slate-400 text-sm">Email: <a href="mailto:sonrie@clinicaulident.com" class="hover:text-white">sonrie@clinicaulident.com</a></p>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-6 text-center text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p>&copy; 2026 Clínica Dental Ulident. Todos los derechos reservados.</p>
+      <div class="flex space-x-4">
+        <a href="aviso-legal.html" class="hover:underline">Aviso Legal</a>
+        <a href="politica-privacidad.html" class="hover:underline">Política de Privacidad</a>
+        <a href="politica-cookies.html" class="hover:underline">Cookies</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core Javascript File -->
+  <script src="app.js"></script>
+</body>
+</html>
