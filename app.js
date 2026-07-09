@@ -226,35 +226,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const stickyCta = document.createElement('div');
     stickyCta.id = 'mobile-sticky-cta';
-    stickyCta.className = 'fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-white/95 backdrop-blur-md border-t border-slate-200/80 shadow-[0_-8px_30px_rgba(0,0,0,0.08)] flex flex-row items-center gap-2.5 px-4 py-3 pb-safe';
+    // Use inline style for width to guarantee no overflow regardless of Tailwind
+    stickyCta.setAttribute('style', 'position:fixed;bottom:0;left:0;width:100%;max-width:100vw;overflow:hidden;box-sizing:border-box;z-index:40;display:grid;grid-template-columns:44px 44px 1fr;align-items:center;gap:10px;padding:10px 16px;background:rgba(255,255,255,0.97);border-top:1px solid #e2e8f0;box-shadow:0 -8px 30px rgba(0,0,0,0.08);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)');
 
     stickyCta.innerHTML = `
       <!-- Llamar -->
       <a href="tel:+34910248447"
-         class="w-11 h-11 rounded-full bg-blue-50 flex-shrink-0 flex items-center justify-center border border-blue-100"
+         style="width:44px;height:44px;border-radius:50%;background:#EFF6FF;border:1px solid #BFDBFE;display:flex;align-items:center;justify-content:center;flex-shrink:0;text-decoration:none;"
          aria-label="Llamar por teléfono">
-        <i data-lucide="phone" class="w-5 h-5 text-brand-blue"></i>
+        <i data-lucide="phone" style="width:20px;height:20px;color:#0F52BA;"></i>
       </a>
 
       <!-- WhatsApp -->
       <a href="https://wa.me/34679926552" target="_blank" rel="noopener noreferrer"
-         class="w-11 h-11 rounded-full bg-[#25D366] flex-shrink-0 flex items-center justify-center"
+         style="width:44px;height:44px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;flex-shrink:0;text-decoration:none;"
          aria-label="Contactar por WhatsApp">
-        <svg viewBox="0 0 24 24" class="w-5 h-5 fill-white">
+        <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:white;">
           <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436.002 9.858-4.419 9.86-9.857.002-2.635-1.02-5.11-2.883-6.975C16.577 1.907 14.1.883 11.468.883 6.03.883 1.61 5.303 1.608 10.742c-.001 1.666.438 3.293 1.272 4.739l-.951 3.472 3.557-.933c1.558.85 3.125 1.271 4.544 1.271h.001L6.647 19.15zm10.963-7.533c-.324-.162-1.92-.949-2.217-1.058-.297-.108-.513-.162-.73.162-.216.324-.838 1.058-1.027 1.274-.189.216-.378.243-.702.08-2.673-1.335-4.308-3.013-5.15-4.471-.223-.387-.024-.597.17-.79.175-.173.378-.432.568-.649.189-.216.253-.378.378-.629.124-.25.064-.47-.03-.649-.093-.18-.73-1.758-.999-2.407-.262-.63-.53-.54-.73-.55l-.624-.011c-.216 0-.568.08-.865.405-.297.324-1.135 1.108-1.135 2.702 0 1.594 1.162 3.136 1.324 3.352.162.216 2.284 3.488 5.534 4.894.773.334 1.377.534 1.847.684.777.247 1.485.212 2.043.129.622-.093 1.92-.785 2.19-1.542.27-.757.27-1.406.189-1.542-.089-.136-.306-.216-.63-.378z"/>
         </svg>
       </a>
 
       <!-- Pedir Cita -->
       <a href="index.html#reserva"
-         class="flex-1 min-w-0 h-11 bg-brand-blue text-white rounded-full flex items-center justify-center gap-2 font-heading font-extrabold text-xs uppercase tracking-wide shadow-md">
-        <i data-lucide="calendar" class="w-4 h-4 flex-shrink-0"></i>
-        <span class="truncate">Pedir Cita</span>
+         style="height:44px;background:#0F52BA;color:white;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:800;font-size:11px;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none;overflow:hidden;box-sizing:border-box;padding:0 16px;">
+        <i data-lucide="calendar" style="width:16px;height:16px;flex-shrink:0;"></i>
+        <span style="white-space:nowrap;">Pedir Cita</span>
       </a>
     `;
 
     document.body.appendChild(stickyCta);
-    document.body.classList.add('pb-20', 'lg:pb-0');
+    // Add bottom padding to body so footer content is not hidden behind bar
+    document.body.style.paddingBottom = '80px';
 
     // Reinitialize Lucide for phone/calendar icons
     if (typeof lucide !== 'undefined') {
