@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <i data-lucide="users" class="w-4 h-4 text-white/60 flex-shrink-0"></i>
             <span>Sobre Nosotros</span>
           </a>
-          <a href="index.html#financiacion" class="flex items-center space-x-3 text-sm font-semibold text-white/90 hover:text-brand-gold py-1.5 transition-colors drawer-link">
+          <a href="contacto.html?interest=financiacion#contact-form" class="flex items-center space-x-3 text-sm font-semibold text-white/90 hover:text-brand-gold py-1.5 transition-colors drawer-link">
             <i data-lucide="credit-card" class="w-4 h-4 text-white/60 flex-shrink-0"></i>
             <span>Financiación</span>
           </a>
@@ -257,7 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </a>
 
       <!-- Pedir Cita -->
-      <a href="index.html#contacto"
+      <a href="contacto.html#contact-form"
          style="height:44px;background:#0F52BA;color:white;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:800;font-size:11px;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none;overflow:hidden;box-sizing:border-box;padding:0 16px;">
         <i data-lucide="calendar" style="width:16px;height:16px;flex-shrink:0;"></i>
         <span style="white-space:nowrap;">Pedir Cita</span>
@@ -751,6 +751,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const formError = document.getElementById('form-error');
     const submitBtn = document.getElementById('btn-submit');
     const resetBtn = document.getElementById('btn-reset-form');
+
+    // Auto-prefill treatment interest based on URL query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const interestParam = urlParams.get('interest');
+    if (interestParam) {
+      const selectEl = document.getElementById('interest');
+      if (selectEl) {
+        selectEl.value = interestParam;
+      }
+    }
 
     // Webhook URLs
     const WEBHOOK_TEST = 'https://primary-production-ab513.up.railway.app/webhook-test/d96b7277-8a39-43f8-9266-a63f2e98ea88';
