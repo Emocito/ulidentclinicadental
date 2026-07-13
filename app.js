@@ -67,35 +67,35 @@ document.addEventListener('DOMContentLoaded', () => {
           <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold border-l-2 border-brand-gold pl-2">Nuestros Tratamientos</p>
           <div class="grid grid-cols-1 gap-1.5 pl-2">
             <a href="odontologia-general.html" class="flex items-center space-x-3 text-sm font-semibold text-slate-200 hover:text-brand-gold py-1.5 transition-colors drawer-link">
-              <i data-lucide="stethoscope" class="w-4 h-4 text-white/60 flex-shrink-0"></i>
+              <img src="assets/odontologia.png" alt="Odontología" class="w-5 h-5 rounded-md object-cover flex-shrink-0 border border-white/20">
               <span>Odontología General</span>
             </a>
             <a href="implantologia.html" class="flex items-center space-x-3 text-sm font-semibold text-slate-200 hover:text-brand-gold py-1.5 transition-colors drawer-link">
-              <i data-lucide="crown" class="w-4 h-4 text-white/60 flex-shrink-0"></i>
+              <img src="assets/implantologia.png" alt="Implantología" class="w-5 h-5 rounded-md object-cover flex-shrink-0 border border-white/20">
               <span>Implantología</span>
             </a>
             <a href="ortodoncia.html" class="flex items-center space-x-3 text-sm font-semibold text-slate-200 hover:text-brand-gold py-1.5 transition-colors drawer-link">
-              <i data-lucide="grid" class="w-4 h-4 text-white/60 flex-shrink-0"></i>
+              <img src="assets/ortodoncia.png" alt="Ortodoncia" class="w-5 h-5 rounded-md object-cover flex-shrink-0 border border-white/20">
               <span>Ortodoncia</span>
             </a>
             <a href="odontopediatria.html" class="flex items-center space-x-3 text-sm font-semibold text-slate-200 hover:text-brand-gold py-1.5 transition-colors drawer-link">
-              <i data-lucide="baby" class="w-4 h-4 text-white/60 flex-shrink-0"></i>
+              <img src="assets/odontopediatria.png" alt="Odontopediatría" class="w-5 h-5 rounded-md object-cover flex-shrink-0 border border-white/20">
               <span>Odontopediatría</span>
             </a>
             <a href="estetica-dental.html#blanqueamiento" class="flex items-center space-x-3 text-sm font-semibold text-slate-200 hover:text-brand-gold py-1.5 transition-colors drawer-link">
-              <i data-lucide="sun" class="w-4 h-4 text-white/60 flex-shrink-0"></i>
+              <img src="assets/blanqueamiento.png" alt="Blanqueamiento Dental" class="w-5 h-5 rounded-md object-cover flex-shrink-0 border border-white/20">
               <span>Blanqueamiento Dental</span>
             </a>
             <a href="estetica-dental.html#carillas" class="flex items-center space-x-3 text-sm font-semibold text-slate-200 hover:text-brand-gold py-1.5 transition-colors drawer-link">
-              <i data-lucide="layers" class="w-4 h-4 text-white/60 flex-shrink-0"></i>
+              <img src="assets/carillas.png" alt="Carillas" class="w-5 h-5 rounded-md object-cover flex-shrink-0 border border-white/20">
               <span>Carillas</span>
             </a>
             <a href="estetica-dental.html#dsd" class="flex items-center space-x-3 text-sm font-semibold text-slate-200 hover:text-brand-gold py-1.5 transition-colors drawer-link">
-              <i data-lucide="monitor" class="w-4 h-4 text-white/60 flex-shrink-0"></i>
+              <img src="assets/dsd.png" alt="Digital Smile Design" class="w-5 h-5 rounded-md object-cover flex-shrink-0 border border-white/20">
               <span>Digital Smile Design</span>
             </a>
             <a href="estetica-dental.html#joya-dental" class="flex items-center space-x-3 text-sm font-semibold text-slate-200 hover:text-brand-gold py-1.5 transition-colors drawer-link">
-              <i data-lucide="gem" class="w-4 h-4 text-white/60 flex-shrink-0"></i>
+              <img src="assets/joya_dental.png" alt="Joya Dental" class="w-5 h-5 rounded-md object-cover flex-shrink-0 border border-white/20">
               <span>Joya Dental</span>
             </a>
           </div>
@@ -866,6 +866,56 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  // --- 5. FLOATING GOOGLE REVIEW BADGE ---
+  const initFloatingGoogleBadge = () => {
+    if (document.getElementById('floating-google-badge')) return;
+
+    const badge = document.createElement('a');
+    badge.id = 'floating-google-badge';
+    badge.href = 'https://share.google/nOdnkEFLINYZ5T6ZB';
+    badge.target = '_blank';
+    badge.rel = 'noopener noreferrer';
+    badge.className = 'fixed bottom-6 left-6 z-40 bg-white border border-slate-200 rounded-2xl shadow-xl p-3 hidden sm:flex items-center gap-3 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 group';
+
+    badge.innerHTML = `
+      <div class="w-9 h-9 rounded-xl bg-slate-50 flex items-center justify-center border border-slate-100 shrink-0 shadow-sm transition-colors group-hover:bg-brand-bluelight">
+        <svg class="w-5.5 h-5.5" viewBox="0 0 24 24" width="22" height="22">
+          <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+          <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+          <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+          <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+        </svg>
+      </div>
+      <div>
+        <div class="flex items-center gap-1.5">
+          <span class="text-xs font-bold text-slate-800">Opiniones en Google</span>
+          <span class="text-xs font-black text-slate-900 bg-slate-100 px-1.5 py-0.5 rounded-md">4.7</span>
+        </div>
+        <div class="flex items-center gap-1 mt-0.5">
+          <div class="flex text-brand-gold">
+            <svg class="w-3.5 h-3.5 fill-current text-[#D4AF37]" viewBox="0 0 24 24" width="14" height="14"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-3.5 h-3.5 fill-current text-[#D4AF37]" viewBox="0 0 24 24" width="14" height="14"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-3.5 h-3.5 fill-current text-[#D4AF37]" viewBox="0 0 24 24" width="14" height="14"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-3.5 h-3.5 fill-current text-[#D4AF37]" viewBox="0 0 24 24" width="14" height="14"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-3.5 h-3.5 text-[#D4AF37]" viewBox="0 0 24 24" width="14" height="14">
+              <defs>
+                <linearGradient id="badge-half-star">
+                  <stop offset="70%" stop-color="#D4AF37"/>
+                  <stop offset="70%" stop-color="#CBD5E1"/>
+                </linearGradient>
+              </defs>
+              <path fill="url(#badge-half-star)" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+            </svg>
+          </div>
+          <span class="text-[10px] text-slate-500 font-semibold">(113)</span>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(badge);
+  };
+
   initContactForm();
+  initFloatingGoogleBadge();
 });
 
