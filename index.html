@@ -214,7 +214,7 @@
 
           <!-- Action CTA Group -->
           <div class="flex flex-col sm:flex-row gap-4">
-            <a href="#reserva" class="btn-blue-glow bg-brand-blue text-white px-8 py-4 rounded-full font-bold text-center shadow-lg hover:bg-brand-bluedark transition-all">
+            <a href="#contacto" class="btn-blue-glow bg-brand-blue text-white px-8 py-4 rounded-full font-bold text-center shadow-lg hover:bg-brand-bluedark transition-all">
               Reserva tu primera visita
             </a>
             <a href="#servicios" class="border border-slate-300 hover:border-brand-blue bg-white/50 text-slate-700 px-8 py-4 rounded-full font-semibold text-center hover:text-brand-blue transition-all">
@@ -651,7 +651,7 @@
             </div>
             
             <div class="pt-4 border-t border-slate-200">
-              <a href="#reserva" class="btn-blue-glow block text-center bg-brand-blue text-white py-3 rounded-full font-bold shadow-md hover:bg-brand-bluedark transition-colors">
+              <a href="#contacto" class="btn-blue-glow block text-center bg-brand-blue text-white py-3 rounded-full font-bold shadow-md hover:bg-brand-bluedark transition-colors">
                 Calcular mi plan de pago
               </a>
             </div>
@@ -772,47 +772,7 @@
     </div>
   </section>
 
-  <!-- ==================== 6. AGENDA DE CITAS (CAL.COM EMBED) ==================== -->
-  <section id="reserva" class="py-24 bg-brand-bg relative">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12">
-      
-      <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-16 reveal-item">
-        <h2 class="text-xs font-bold text-brand-blue tracking-widest uppercase mb-3">Agenda con nosotros</h2>
-        <p class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 leading-tight">
-          Elige el día y hora que mejor te convenga
-        </p>
-        <p class="text-slate-600 mt-4 text-base">
-          Utiliza nuestra agenda interactiva en tiempo real para reservar tu consulta. Recibirás una confirmación inmediata por correo electrónico.
-        </p>
-      </div>
 
-      <!-- Booking Container (Adaptable, Centered, Styled) -->
-      <div class="reveal-item">
-        <div class="w-full max-w-4xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100 min-h-[600px] relative p-2 md:p-6">
-          
-          <!-- Cal.com Embed Container -->
-          <div id="my-cal-inline" class="w-full h-full min-h-[580px] overflow-auto">
-            <!-- Loading Indicator -->
-            <div class="absolute inset-0 flex flex-col items-center justify-center bg-white space-y-4 z-10 transition-opacity duration-300" id="cal-loader">
-              <div class="w-12 h-12 border-4 border-brand-blue/20 border-t-brand-blue rounded-full animate-spin"></div>
-              <p class="text-slate-500 text-sm font-semibold">Cargando agenda online...</p>
-            </div>
-            
-            <!-- FALLBACK IFRAME (Loads if JS SDK is slow) -->
-            <!-- Note to Developer/Client: Change the src value to your Cal.com booking link -->
-            <iframe src="https://cal.com/alice/30min?embed=true" class="w-full h-full min-h-[580px] border-0" id="cal-iframe" style="display:none;" onload="document.getElementById('cal-loader').style.display='none'; this.style.display='block';"></iframe>
-          </div>
-
-        </div>
-        
-        <p class="text-center text-xs text-slate-500 mt-6 max-w-md mx-auto">
-          ¿Prefieres reservar por teléfono? Llámanos directamente al <a href="tel:+34910248447" class="text-brand-blue font-bold hover:underline">910 248 447</a> o envíanos un WhatsApp.
-        </p>
-      </div>
-
-    </div>
-  </section>
 
   <!-- ==================== 7. CONTACTO Y FOOTER ==================== -->
   <section id="contacto" class="relative pt-24 bg-brand-dark text-slate-300">
@@ -950,7 +910,7 @@
       <div class="space-y-3">
         <h4 class="font-heading font-extrabold text-sm text-white tracking-wide">¿Aceptas el uso de cookies?</h4>
         <p class="text-xs text-slate-300 leading-relaxed">
-          Utilizamos cookies propias y de terceros para personalizar tu experiencia, recordar tu cita previa y analizar el tráfico de forma anónima. Conoce más en nuestra <a href="politica-cookies.html" class="text-brand-gold hover:underline font-semibold">Política de Cookies</a>.
+          Utilizamos cookies propias y de terceros para personalizar tu experiencia y analizar el tráfico de forma anónima. Conoce más en nuestra <a href="politica-cookies.html" class="text-brand-gold hover:underline font-semibold">Política de Cookies</a>.
         </p>
       </div>
     </div>
@@ -1001,7 +961,7 @@
               <span class="px-2 py-0.5 bg-slate-200 text-slate-600 rounded text-[9px] font-semibold uppercase">Siempre Activas</span>
             </div>
             <p class="text-[11px] text-slate-500 leading-relaxed">
-              Necesarias para el correcto funcionamiento del portal, guardar tus preferencias de consentimiento de cookies y permitir el widget de reserva de citas.
+              Necesarias para el correcto funcionamiento del portal y guardar tus preferencias de consentimiento de cookies.
             </p>
           </div>
           <!-- Toggle input disabled (cannot reject technical) -->

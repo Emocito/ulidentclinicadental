@@ -1,6 +1,6 @@
 /**
  * Clínica Dental Ulident - Javascript Core
- * Handles: Scroll Reveal, Navbar state, Mobile Menu, Testimonial Carousel, and Cal.com Embed
+ * Handles: Scroll Reveal, Navbar state, Mobile Menu, and Testimonial Carousel
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -257,7 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </a>
 
       <!-- Pedir Cita -->
-      <a href="index.html#reserva"
+      <a href="index.html#contacto"
          style="height:44px;background:#0F52BA;color:white;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:800;font-size:11px;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none;overflow:hidden;box-sizing:border-box;padding:0 16px;">
         <i data-lucide="calendar" style="width:16px;height:16px;flex-shrink:0;"></i>
         <span style="white-space:nowrap;">Pedir Cita</span>
@@ -439,59 +439,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // --- 5. CAL.COM INTEGRATION ---
-  // We initialize the Cal.com SDK and embed the inline widget.
-  // Note: The template uses a demo username 'alice' and event type '30min'.
-  // Clinicians should change 'alice/30min' to their actual cal.com link (e.g. 'ulident/primera-cita').
-  const calContainer = document.getElementById('my-cal-inline');
-  
-  if (calContainer) {
-    (function (C, A, L) {
-      // Standard Cal.com embed loader snippet
-      let _let = C.Cal = C.Cal || function () {
-        let l = _let.q = _let.q || [];
-        l.push(arguments);
-      };
-      let m = A.createElement(L), e = A.getElementsByTagName(L)[0];
-      m.async = 1;
-      m.src = "https://app.cal.com/embed/embed.js";
-      m.onload = function() {
-        // Callback once the script is loaded successfully
-        console.log("Cal.com SDK loaded successfully");
-        
-        // Initialize Cal
-        Cal("init", { origin: "https://cal.com" });
-        
-        // Embed inline calendar
-        // REPLACE 'alice/30min' with your actual username and event slug, e.g., 'ulident/primera-visita'
-        Cal("inline", {
-          elementOrSelector: "#my-cal-inline",
-          calLink: "alice/30min",
-          config: {
-            theme: "light",
-            styles: {
-              branding: {
-                brandColor: "#0F52BA", // Cobalt Blue
-              }
-            }
-          }
-        });
-        
-        // Cal UI customization
-        Cal("ui", {
-          styles: {
-            branding: {
-              brandColor: "#0F52BA"
-            }
-          },
-          hideEventTypeDetails: false,
-          layout: "month_view"
-        });
-      };
-      
-      e.parentNode.insertBefore(m, e);
-    })(window, document, "script");
-  }
+
 
   // Initialize Lucide Icons
   if (typeof lucide !== 'undefined') {
@@ -513,7 +461,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="space-y-3">
             <h4 class="font-heading font-extrabold text-sm text-white tracking-wide">¿Aceptas el uso de cookies?</h4>
             <p class="text-xs text-slate-300 leading-relaxed">
-              Utilizamos cookies propias y de terceros para personalizar tu experiencia, recordar tu cita previa y analizar el tráfico de forma anónima. Conoce más en nuestra <a href="politica-cookies.html" class="text-brand-gold hover:underline font-semibold">Política de Cookies</a>.
+              Utilizamos cookies propias y de terceros para personalizar tu experiencia y analizar el tráfico de forma anónima. Conoce más en nuestra <a href="politica-cookies.html" class="text-brand-gold hover:underline font-semibold">Política de Cookies</a>.
             </p>
           </div>
         </div>
@@ -562,7 +510,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   <span class="px-2 py-0.5 bg-slate-200 text-slate-600 rounded text-[9px] font-semibold uppercase">Siempre Activas</span>
                 </div>
                 <p class="text-[11px] text-slate-500 leading-relaxed">
-                  Necesarias para el correcto funcionamiento del portal, guardar tus preferencias de consentimiento de cookies y permitir el widget de reserva de citas.
+                  Necesarias para el correcto funcionamiento del portal y guardar tus preferencias de consentimiento de cookies.
                 </p>
               </div>
               <div class="relative flex items-center select-none mt-1">
