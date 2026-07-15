@@ -94,10 +94,6 @@ document.addEventListener('DOMContentLoaded', () => {
               <img src="assets/dsd.png" alt="Digital Smile Design" class="w-5 h-5 rounded-md object-cover flex-shrink-0 border border-white/20">
               <span>Digital Smile Design</span>
             </a>
-            <a href="estetica-dental.html#joya-dental" class="flex items-center space-x-3 text-sm font-semibold text-slate-200 hover:text-brand-gold py-1.5 transition-colors drawer-link">
-              <img src="assets/joya_dental.png" alt="Joya Dental" class="w-5 h-5 rounded-md object-cover flex-shrink-0 border border-white/20">
-              <span>Joya Dental</span>
-            </a>
           </div>
         </div>
 
