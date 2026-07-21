@@ -587,18 +587,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const applyConsent = (consent) => {
     console.log("%c[Cookies Ulident] Aplicando configuración de privacidad:", "color: #0F52BA; font-weight: bold;", consent);
-    
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ window.dataLayer.push(arguments); }
+
+    const analyticsGranted = consent.analytics ? 'granted' : 'denied';
+    const marketingGranted = consent.marketing ? 'granted' : 'denied';
+
+    // Actualización de estado en Google Consent Mode v2
+    gtag('consent', 'update', {
+      'analytics_storage': analyticsGranted,
+      'ad_storage': marketingGranted,
+      'ad_user_data': marketingGranted,
+      'ad_personalization': marketingGranted
+    });
+
+    // Notificar eventos a dataLayer para disparar etiquetas en GTM
+    window.dataLayer.push({
+      event: 'consent_status_update',
+      analytics_consent: !!consent.analytics,
+      marketing_consent: !!consent.marketing
+    });
+
     if (consent.technical) {
       console.log("[Cookies Ulident] -> Cookies técnicas y esenciales habilitadas.");
     }
     
     if (consent.analytics) {
+      window.dataLayer.push({ event: 'consent_update_analytics' });
       console.log("[Cookies Ulident] -> Google Analytics HABILITADO.");
     } else {
       console.log("[Cookies Ulident] -> Google Analytics DESHABILITADO.");
     }
 
     if (consent.marketing) {
+      window.dataLayer.push({ event: 'consent_update_marketing' });
       console.log("[Cookies Ulident] -> Píxel de Meta HABILITADO.");
     } else {
       console.log("[Cookies Ulident] -> Píxel de Meta DESHABILITADO.");
@@ -825,6 +848,15 @@ document.addEventListener('DOMContentLoaded', () => {
           // Success!
           form.reset();
           
+          // DataLayer conversion event for GTM (GA4 & Meta Pixel)
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: 'generate_lead',
+            form_name: 'contacto_cita',
+            service_requested: payload.tratamiento || 'General'
+          });
+          console.log('%c[Analytics] Evento registrado: generate_lead', 'color: #10B981; font-weight: bold;');
+
           // Hide title and form
           if (formTitle) formTitle.classList.add('hidden');
           form.classList.add('hidden');
@@ -921,7 +953,37 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(badge);
   };
 
+  // --- 8. MEDICIÓN DE CLICS EN WHATSAPP Y TELÉFONO (CONVERSIONES GTM) ---
+  const initClickTracking = () => {
+    document.body.addEventListener('click', (e) => {
+      const link = e.target.closest('a');
+      if (!link) return;
+      const href = link.getAttribute('href') || '';
+
+      if (href.includes('wa.me') || href.includes('whatsapp.com')) {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'click_whatsapp',
+          link_url: href,
+          link_text: link.textContent.trim(),
+          location: link.getAttribute('aria-label') || link.id || 'whatsapp_link'
+        });
+        console.log('%c[Analytics] Evento registrado: click_whatsapp', 'color: #25D366; font-weight: bold;');
+      } else if (href.startsWith('tel:')) {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'click_phone',
+          phone_number: href.replace('tel:', ''),
+          link_text: link.textContent.trim(),
+          location: link.getAttribute('aria-label') || link.id || 'phone_link'
+        });
+        console.log('%c[Analytics] Evento registrado: click_phone', 'color: #0F52BA; font-weight: bold;');
+      }
+    });
+  };
+
   initContactForm();
   initFloatingGoogleBadge();
+  initClickTracking();
 });
 
