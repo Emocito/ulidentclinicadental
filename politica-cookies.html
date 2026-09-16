@@ -230,6 +230,9 @@
     </div>
   </footer>
 
+  <!-- Core Javascript File -->
+  <script src="app.js"></script>
+
   <script>
     // Initialize Lucide Icons
     if (typeof lucide !== 'undefined') {
@@ -238,8 +241,12 @@
 
     // Dynamic button listener to trigger the cookies settings modal
     document.getElementById('open-cookies-settings-btn')?.addEventListener('click', () => {
-      // Dispatch custom event to trigger cookies configuration modal in app.js
-      window.dispatchEvent(new CustomEvent('open-cookies-config'));
+      if (typeof window.openCookiesModal === 'function') {
+        window.openCookiesModal();
+      } else {
+        // Dispatch custom event to trigger cookies configuration modal in app.js
+        window.dispatchEvent(new CustomEvent('open-cookies-config'));
+      }
     });
   </script>
 </body>

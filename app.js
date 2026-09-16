@@ -737,6 +737,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
+    window.openCookiesModal = openModal;
     window.addEventListener('open-cookies-config', openModal);
   };
 
