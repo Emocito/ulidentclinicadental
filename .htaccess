@@ -1,0 +1,85 @@
+﻿# ====================================================================
+# Clínica Dental Ulident - Configuración Apache (.htaccess) para IONOS
+# ====================================================================
+
+# 1. Configuración de Codificación y Tipos MIME
+# --------------------------------------------------------------------
+AddDefaultCharset UTF-8
+AddType image/svg+xml .svg
+AddType font/woff2 .woff2
+
+# 2. Motor de Reescritura y Redirección a HTTPS
+# --------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Forzar conexión segura HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Proteger archivos ocultos (como este .htaccess)
+    RewriteRule "(^|/)\.(?!well-known)" - [F]
+</IfModule>
+
+# 3. Compresión GZIP / Deflate para optimizar velocidad de carga
+# --------------------------------------------------------------------
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE font/woff
+    AddOutputFilterByType DEFLATE font/woff2
+</IfModule>
+
+# 4. Cabeceras de Caché del Navegador (Expires Headers)
+# --------------------------------------------------------------------
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+
+    # HTML (para cambios inmediatos de contenido)
+    ExpiresByType text/html "access plus 0 seconds"
+
+    # CSS y JavaScript
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+
+    # Imágenes
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+
+    # Fuentes
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+</IfModule>
+
+# 5. Cabeceras de Seguridad
+# --------------------------------------------------------------------
+<IfModule mod_headers.c>
+    # Prevenir ataques clickjacking
+    Header set X-Frame-Options "SAMEORIGIN"
+    
+    # Prevenir MIME-sniffing
+    Header set X-Content-Type-Options "nosniff"
+    
+    # Política de Referrer
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# 6. Página de Error 404 (Redirigir a inicio si no existe la página)
+# --------------------------------------------------------------------
+ErrorDocument 404 /index.html
